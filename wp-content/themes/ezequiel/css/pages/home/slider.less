@@ -1,0 +1,33 @@
+.slick-slider{
+	.slick-arrow{
+		position:absolute;
+		top:50%;
+		width:30px;
+		height:62px;
+		z-index:999;
+		color:transparent;
+		border:none;
+		background-color:transparent;
+		background-image:url('../../../img/arrow.png');
+		background-repeat:no-repeat;
+		-webkit-transform:translateY(-50%);
+		-moz-transform:translateY(-50%);
+		-ms-transform:translateY(-50%);
+		-o-transform:translateY(-50%);
+		transform:translateY(-50%);
+		outline:none;
+
+		&.slick-prev{
+			left:4em;
+			-webkit-transform:translateY(-50%) rotate(180deg);
+			-moz-transform:translateY(-50%) rotate(180deg);
+			-ms-transform:translateY(-50%) rotate(180deg);
+			-o-transform:translateY(-50%) rotate(180deg);
+			transform:translateY(-50%) rotate(180deg);
+		}
+
+		&.slick-next{
+			right:4em;
+		}
+	}
+}

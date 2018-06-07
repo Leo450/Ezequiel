@@ -1,0 +1,13 @@
+.l-logo {
+  font-size: 2em;
+  font-family: playfair, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #f2c169 !important;
+}
+.l-logo span {
+  display: block;
+  text-align: right;
+  text-transform: none;
+  font-size: .7em;
+  color: #fff !important;
+}

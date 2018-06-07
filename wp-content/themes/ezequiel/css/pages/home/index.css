@@ -1,0 +1,14 @@
+.sidebar {
+  margin-top: -7em;
+}
+.quote {
+  padding: 0 6em;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+.quote .author {
+  float: right;
+  font-weight: 300;
+  color: #f2c169;
+}

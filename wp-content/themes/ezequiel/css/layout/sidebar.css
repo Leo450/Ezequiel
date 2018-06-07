@@ -1,0 +1,30 @@
+.sidebar {
+  padding: 4em;
+  background-color: #f2c169;
+  color: #000;
+}
+.sidebar h1,
+.sidebar h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.sidebar h1 {
+  letter-spacing: 2px;
+  margin: 0;
+}
+.sidebar h3 {
+  position: relative;
+  margin-top: .5em;
+  margin-bottom: 4em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.sidebar h3:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 60%;
+  bottom: -1em;
+  left: 20%;
+  background-color: #000;
+}

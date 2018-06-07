@@ -1,0 +1,119 @@
+# Translation of Plugins - My WP Translate - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - My WP Translate - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-06-20 09:52:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - My WP Translate - Stable (latest release)\n"
+
+#: admin/class-my-wp-translate-admin.php:95
+msgid "Are you sure you want to delete plugin translations?"
+msgstr "Êtes vous sûr de vouloir supprimer les traductions d'extensions ?"
+
+#: admin/class-my-wp-translate-admin.php:96
+msgid "Please make sure that you have correct code and that you have the backup of current strings. Proceed?"
+msgstr "Merci de vous assurer que vous avez le code correct et que vous possédez la sauvegarde des chaînes actuelles. Procéder ?"
+
+#. Author of the plugin/theme
+msgid "MyThemeShop"
+msgstr "MyThemeShop"
+
+#: admin/class-my-wp-translate-admin.php:197
+msgid "Add"
+msgstr "Ajouter"
+
+#. Author URI of the plugin/theme
+msgid "https://mythemeshop.com/"
+msgstr "https://mythemeshop.com/"
+
+#. Plugin URI of the plugin/theme
+msgid "https://mythemeshop.com/plugins/my-wp-translate/"
+msgstr "https://mythemeshop.com/plugins/my-wp-translate/"
+
+#: admin/class-my-wp-translate-admin.php:286
+msgid "Create and Download .po file"
+msgstr "Créer et télécharger le fichier .po"
+
+#: admin/class-my-wp-translate-admin.php:265
+msgid "Import Translated Strings"
+msgstr "Importer des chaînes traduites"
+
+#: admin/class-my-wp-translate-admin.php:233
+msgid "Search Translations"
+msgstr "Rechercher des traductions"
+
+#: admin/class-my-wp-translate-admin.php:223
+msgid "Enable translation panel"
+msgstr "Activer le panneau de traduction"
+
+#: admin/class-my-wp-translate-admin.php:476
+msgid "Page:"
+msgstr "Page:"
+
+#: admin/class-my-wp-translate-admin.php:273
+msgid "Import"
+msgstr "Import"
+
+#: admin/class-my-wp-translate-admin.php:1011
+msgid "Something is wrong with import data. Please paste valid code and try again."
+msgstr "Quelque chose ne va pas avec les données d’importation. Veuillez coller un code valide et réessayer."
+
+#: admin/class-my-wp-translate-admin.php:349
+msgid "Add Plugin"
+msgstr "Ajouter une extension"
+
+#: admin/class-my-wp-translate-admin.php:277
+msgid "Copy export/backup code and keep it safe."
+msgstr "Copiez le code d’export/sauvegarde et gardez-le en sécurité."
+
+#: admin/class-my-wp-translate-admin.php:271
+msgid "Paste your import/backup code and press \"Import\" button below."
+msgstr "Collez votre code d'import/sauvegarde et appuyez sur le bouton « Importer » ci-dessous."
+
+#: admin/class-my-wp-translate-admin.php:266
+msgid "Export Translated Strings"
+msgstr "Exporter les chaînes traduites"
+
+#: admin/class-my-wp-translate-admin.php:261
+msgid "Toggle Import/Export Options"
+msgstr "Basculer les options d’import/export"
+
+#: admin/class-my-wp-translate-admin.php:237
+msgid "Strings Per Page:"
+msgstr "Chaînes par page :"
+
+#: admin/class-my-wp-translate-admin.php:226
+msgid "We couldn't find language file, please enter the path to your theme/plugin language file relative to wp-content folder."
+msgstr "Nous n'avons pas pu trouver le fichier langue, veuillez saisir le chemin d’accès au fichier langue de votre thème/extension relatif au dossier wp-content."
+
+#: admin/class-my-wp-translate-admin.php:149
+msgid "Select Active Plugin"
+msgstr "Sélectionnez une extension active"
+
+#. #-#-#-#-#  my-wp-translate-code.pot (My WP Translate 1.0.7)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: admin/class-my-wp-translate-admin.php:114
+#: admin/class-my-wp-translate-admin.php:115
+msgid "My WP Translate"
+msgstr "My WP Translate"
+
+#: admin/class-my-wp-translate-admin.php:98
+msgid "Updating export code..."
+msgstr "Mise à jour du code d’export&hellip;"
+
+#: admin/class-my-wp-translate-admin.php:97
+msgid "No data to import. Please paste the code in import field."
+msgstr "Aucune donnée à importer. Veuillez coller le code dans le champ d’importation."
+
+#. Description of the plugin/theme
+msgid "Simple yet powerful Translate plugin for WordPress. Can be used with most of the themes and plugins which support translation."
+msgstr "Extension de traduction simple et puissante pour WordPress. Peut être utilisée avec la plupart des thèmes et des extensions qui supportent la traduction."
+
+#: admin/class-my-wp-translate-admin.php:802
+msgid "Translated <span class=\"translated\">%1$d</span> strings out of <span class=\"total\">%2$d</span> <span class=\"percent\">(%3$.2f%%)</span>"
+msgstr "Traduit <span class=\"translated\">%1$d</span> chaînes hors de <span class=\"total\">%2$d</span> <span class=\"percent\">(%3$.2f%%)</span>"

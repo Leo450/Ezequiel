@@ -1,0 +1,17 @@
+form {
+  padding-bottom: 2em;
+}
+form input:not([type="submit"]),
+form textarea {
+  padding: 1em;
+  border: none;
+  width: 100%;
+  resize: none;
+}
+form input[type="submit"] {
+  padding: 1em;
+  border: none;
+  background-color: #000;
+  color: #fff !important;
+  text-transform: uppercase;
+}

@@ -1,0 +1,24 @@
+article h1 {
+  font-style: italic;
+}
+article h2 {
+  color: #f2c169;
+  text-transform: uppercase;
+}
+article p:not(.empty) {
+  position: relative;
+  margin-left: 2.5em;
+  padding-left: 2.5em;
+}
+article p:not(.empty):before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #dddddd;
+}
+article ul {
+  margin-left: 2.5em;
+}

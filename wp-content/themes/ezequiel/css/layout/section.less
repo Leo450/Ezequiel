@@ -1,0 +1,52 @@
+@import "../variables/colors";
+
+.section{
+	padding-bottom:4em;
+
+	&.section-black{
+		background-color:@black;
+
+		*{
+			color:@white;
+		}
+	}
+	&.section-yellow{
+		background-color:@yellow;
+
+		*{
+			color:@black;
+		}
+	}
+
+	.section-title{
+		position:relative;
+		padding:4em 0;
+		text-align:center;
+		text-transform:uppercase;
+
+		&:after{
+			content:'';
+			position:absolute;
+			width:100px;
+			height:1px;
+			top:100%;
+			left:50%;
+			margin-top:-3.5em;
+			background-color:#333;
+			-webkit-transform:translateX(-50%);
+			-moz-transform:translateX(-50%);
+			-ms-transform:translateX(-50%);
+			-o-transform:translateX(-50%);
+			transform:translateX(-50%);
+		}
+
+		.title{
+			margin:0;
+			letter-spacing:2px;
+		}
+		.sub-title{
+			font-weight:300;
+		}
+	}
+
+}

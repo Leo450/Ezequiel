@@ -1,0 +1,48 @@
+@import "../variables/colors";
+
+.button{
+	display:inline-block;
+	padding:1.2em 2em 1em 2em;
+	border:1px solid black;
+	text-transform:uppercase;
+	color:@black;
+
+	&.button-narrow{
+		padding:.5em .7em .3em .7em;
+	}
+
+	&.button-filled{
+		background-color:@black;
+		border:none;
+		color:@white;
+	}
+
+	&.button-bold{
+		font-weight:400;
+	}
+
+	&.button-rounded{
+		-webkit-border-radius:999px;
+		-moz-border-radius:999px;
+		border-radius:999px;
+	}
+
+	&.button-yellow{
+		border-color:@yellow;
+		color:@yellow;
+
+		&.button-filled{
+			background-color:@yellow;
+			color:@black;
+		}
+	}
+	&.button-white{
+		border-color:@white;
+		color:@white;
+
+		&.button-filled{
+			background-color:@white;
+			color:@black;
+		}
+	}
+}

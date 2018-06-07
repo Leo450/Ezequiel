@@ -1,0 +1,18 @@
+.filters {
+  margin-bottom: 2em;
+}
+.filters span {
+  margin-right: 1em;
+  color: #ddd;
+}
+.filters .button {
+  color: #000;
+  text-transform: none;
+  border-color: #ddd;
+}
+.filters .button.active {
+  border-color: #f2c169;
+}
+.w-100 {
+  margin: 1em 0;
+}

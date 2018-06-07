@@ -1,0 +1,8 @@
+.page-not-found {
+  font-size: 1.5em;
+  padding: 4em;
+  border: 1px solid #f2c169;
+  text-align: center;
+  font-family: pt_sans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+}

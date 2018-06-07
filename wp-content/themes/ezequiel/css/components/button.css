@@ -1,0 +1,39 @@
+.button {
+  display: inline-block;
+  padding: 1.2em 2em 1em 2em;
+  border: 1px solid black;
+  text-transform: uppercase;
+  color: #000;
+}
+.button.button-narrow {
+  padding: .5em .7em .3em .7em;
+}
+.button.button-filled {
+  background-color: #000;
+  border: none;
+  color: #fff;
+}
+.button.button-bold {
+  font-weight: 400;
+}
+.button.button-rounded {
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  border-radius: 999px;
+}
+.button.button-yellow {
+  border-color: #f2c169;
+  color: #f2c169;
+}
+.button.button-yellow.button-filled {
+  background-color: #f2c169;
+  color: #000;
+}
+.button.button-white {
+  border-color: #fff;
+  color: #fff;
+}
+.button.button-white.button-filled {
+  background-color: #fff;
+  color: #000;
+}

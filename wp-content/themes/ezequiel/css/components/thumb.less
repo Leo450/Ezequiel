@@ -1,0 +1,78 @@
+@import "../variables/fonts";
+@import "../variables/colors";
+
+.thumb{
+
+	div.thumbnail{
+		position:relative;
+		padding-bottom:100%;
+
+		> div{
+			position:absolute;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+			background-size:cover;
+			background-position:center;
+		}
+	}
+
+	.title{
+		margin:0 0 .25em 0;
+		font-size:1.25em;
+		text-transform:uppercase;
+		font-family:@font-text;
+	}
+
+	img + .title, .thumbnail + .title{
+		margin-top:1em;
+	}
+
+	.legend{
+		font-style:italic;
+	}
+
+	.date{
+		display:block;
+		margin-bottom:1em;
+		font-style:italic;
+		text-decoration:underline;
+	}
+
+	.button{
+		float:right;
+		margin-top:1em;
+	}
+
+	& + .thumb{
+		margin-top:4em;
+	}
+
+	&.thumb-full{
+
+		.title{
+			font-family:@font-title;
+			font-style:italic;
+			font-size:1.3em;
+		}
+
+		.date{
+			margin-top:1em;
+			margin-left:3em;
+			color:@yellow;
+			text-decoration:none;
+			font-style:normal;
+		}
+
+		.desc{
+			text-align:justify;
+		}
+
+	}
+
+	&.thumb-alone{
+		margin-bottom:4em;
+	}
+
+}

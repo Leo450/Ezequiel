@@ -1,0 +1,33 @@
+.l-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.l-footer .l-footer__top {
+  padding: 3em 0;
+  background-color: #000;
+}
+.l-footer .l-footer__top .l-logo {
+  font-size: 1.5em;
+}
+.l-footer .l-footer__top .contact {
+  padding-left: 4em;
+}
+.l-footer .l-footer__top .contact .follow {
+  margin-top: 1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.l-footer .l-footer__bottom {
+  padding: 1em 0;
+  background-color: #202020;
+  text-align: center;
+  color: #fff;
+}
+.l-footer .l-footer__bottom .copyright {
+  margin: 0;
+  font-weight: 400;
+  font-size: .8em;
+  text-transform: uppercase;
+}

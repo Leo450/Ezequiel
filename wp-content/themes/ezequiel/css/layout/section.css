@@ -1,0 +1,43 @@
+.section {
+  padding-bottom: 4em;
+}
+.section.section-black {
+  background-color: #000;
+}
+.section.section-black * {
+  color: #fff;
+}
+.section.section-yellow {
+  background-color: #f2c169;
+}
+.section.section-yellow * {
+  color: #000;
+}
+.section .section-title {
+  position: relative;
+  padding: 4em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.section .section-title:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  top: 100%;
+  left: 50%;
+  margin-top: -3.5em;
+  background-color: #333;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.section .section-title .title {
+  margin: 0;
+  letter-spacing: 2px;
+}
+.section .section-title .sub-title {
+  font-weight: 300;
+}
