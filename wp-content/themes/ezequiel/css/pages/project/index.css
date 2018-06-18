@@ -34,3 +34,8 @@
 .project-menu li:last-child {
   margin-bottom: 0;
 }
+@media (max-width: 575px) {
+  .sidebar {
+    margin: 0 -15px;
+  }
+}

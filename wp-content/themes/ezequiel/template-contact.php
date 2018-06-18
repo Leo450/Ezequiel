@@ -19,8 +19,8 @@
 
 				<div class="row">
 
-					<div class="col-5"></div>
-					<div class="col-7">
+					<div class="col-md-5"></div>
+					<div class="col-md-7">
 
 						<h1>Téléchargez le dossier de presse du projet</h1>
 

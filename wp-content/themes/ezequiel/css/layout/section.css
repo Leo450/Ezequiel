@@ -41,3 +41,8 @@
 .section .section-title .sub-title {
   font-weight: 300;
 }
+@media (max-width: 575px) {
+  .section {
+    padding-bottom: 0;
+  }
+}

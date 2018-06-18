@@ -29,7 +29,7 @@ $puppets_posts_query = new WP_Query([
 
 					<?php while($puppets_posts_query->have_posts()): $puppets_posts_query->the_post(); ?>
 
-						<div class="col-3">
+						<div class="col-md-3">
 
 							<div class="thumb">
 								<div class="thumbnail">
@@ -42,8 +42,10 @@ $puppets_posts_query = new WP_Query([
 
 						</div>
 
+						<div class="w-100 d-md-none"></div>
+
 						<?php if(($puppets_posts_query->current_post + 1) % 4 == 0): ?>
-							<div class="w-100"></div>
+							<div class="w-100 d-none d-md-block"></div>
 						<?php endif; ?>
 
 					<?php endwhile; ?>

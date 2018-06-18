@@ -12,3 +12,15 @@
   font-weight: 300;
   color: #f2c169;
 }
+@media (max-width: 575px) {
+  .sidebar {
+    margin: 0 -15px;
+  }
+  .quote {
+    margin-bottom: 2em;
+    padding: 0;
+  }
+  .section-home-news .thumb {
+    margin-bottom: 2em;
+  }
+}

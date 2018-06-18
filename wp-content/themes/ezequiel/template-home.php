@@ -69,7 +69,7 @@ $log_query = new WP_Query([
 
 				<div class="row">
 
-					<div class="col-7">
+					<div class="col-md-7">
 
 						<!-- article -->
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -87,7 +87,7 @@ $log_query = new WP_Query([
 
 					</div>
 
-					<div class="col-4 offset-1">
+					<div class="col-md-4 offset-md-1">
 
 						<div class="sidebar">
 
@@ -153,7 +153,7 @@ $log_query = new WP_Query([
 
 					<?php while($post_query->have_posts()): $post_query->the_post(); ?>
 
-						<div class="col-4">
+						<div class="col-md-4<?php if($post_query->current_post > 0){ echo " d-none d-md-block"; } ?>">
 							<div class="thumb thumb-full">
 								<img src="<?php echo get_the_post_thumbnail_url($post_query->post->ID); ?>" alt="">
 								<h4 class="title"><?php echo $post_query->post->post_title; ?></h4>

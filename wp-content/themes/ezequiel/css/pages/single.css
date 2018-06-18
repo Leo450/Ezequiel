@@ -1,4 +1,18 @@
-.attachment-post-thumbnail {
+.post .attachment-post-thumbnail {
   float: left;
   margin-right: 4em;
+}
+.post .meta .wpcr_tooltip {
+  float: none;
+  width: auto;
+}
+.post .meta .wpcr_tooltip .wpcr_stars {
+  display: none;
+}
+.post .meta .wpcr_tooltip .wpcr_averageStars {
+  float: none;
+  margin: 0;
+}
+.post .content {
+  margin-top: 2em;
 }

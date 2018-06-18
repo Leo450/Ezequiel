@@ -27,7 +27,11 @@ get_header(); ?>
 					<span class="date"> Publié le <?php the_time('j F Y'); ?></span>
 					<!-- /post details -->
 
-					<?php the_content(); // Dynamic Content ?>
+					<div class="meta"><?php the_tags(); ?></div>
+
+					<div class="content">
+						<?php the_content(); // Dynamic Content ?>
+					</div>
 
 					<div class="clear"></div>
 

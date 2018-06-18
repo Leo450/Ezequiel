@@ -11,3 +11,12 @@
   font-size: .7em;
   color: #fff !important;
 }
+@media (max-width: 575px) {
+  .l-logo {
+    display: inline-block;
+    text-align: left;
+  }
+  .l-logo span {
+    padding-bottom: 1em;
+  }
+}

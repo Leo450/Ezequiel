@@ -31,11 +31,17 @@
 			<!-- header -->
 			<header class="l-header clear" role="banner">
 
+				<div class="mobile-menu-button d-md-none">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
 				<div class="container">
 
 					<div class="row align-items-center">
 
-						<div class="col col-auto">
+						<div class="col col-12 col-md-auto">
 							<!-- logo -->
 							<a class="l-logo" href="<?php echo home_url(); ?>">
 								Le petit théâtre<br>du bout du monde
@@ -44,15 +50,15 @@
 							<!-- /logo -->
 						</div>
 
-						<div class="col">
+						<div class="col col-12 col-md-auto">
 							<!-- nav -->
-							<nav class="nav" role="navigation">
+							<nav class="nav d-none d-md-block" role="navigation">
 								<?php html5blank_nav(); ?>
 							</nav>
 							<!-- /nav -->
 						</div>
 
-						<div class="col col-auto">
+						<div class="d-none d-md-block col col-auto">
 							<!-- socials -->
 							<div class="socials">
 								qzd

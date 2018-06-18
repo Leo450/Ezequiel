@@ -10,6 +10,13 @@ $members_posts_query = new WP_Query([
 	'paged' => $paged
 ]);
 
+$log_query = new WP_Query([
+	'post_type'=> 'log',
+	'order'    => 'ASC',
+	'posts_per_page' => 3
+
+]);
+
 ?>
 
 <?php get_header(); ?>
@@ -29,7 +36,7 @@ $members_posts_query = new WP_Query([
 
 					<div class="row">
 
-						<div class="col-7">
+						<div class="col-md-7">
 
 							<div class="thumb thumb-alone">
 								<div class="row align-items-center">
@@ -55,7 +62,7 @@ $members_posts_query = new WP_Query([
 
 								<?php while($members_posts_query->have_posts()): $members_posts_query->the_post(); ?>
 
-									<div class="col-4">
+									<div class="col-6 col-md-4">
 
 										<a href="<?php the_permalink(); ?>" class="thumb">
 											<div class="thumbnail">
@@ -67,8 +74,12 @@ $members_posts_query = new WP_Query([
 
 									</div>
 
+									<?php if(($members_posts_query->current_post) % 2 == 0): ?>
+										<div class="w-100 d-md-none"></div>
+									<?php endif; ?>
+
 									<?php if(($members_posts_query->current_post) % 3 == 0): ?>
-										<div class="w-100"></div>
+										<div class="w-100 d-none d-md-block"></div>
 									<?php endif; ?>
 
 								<?php endwhile; ?>
@@ -79,7 +90,7 @@ $members_posts_query = new WP_Query([
 
 						</div>
 
-						<div class="col-4 offset-1">
+						<div class="col-md-4 offset-md-1">
 
 							<div class="sidebar">
 
@@ -114,6 +125,41 @@ $members_posts_query = new WP_Query([
 
 	</section>
 	<!-- /section -->
+
+	<section class="section section-yellow section-project-logs">
+
+		<div class="container">
+
+			<div class="section-title">
+				<h1 class="title">Suivez l'avancée du projet</h1>
+				<h3 class="sub-title">Grâce au carnet de bord</h3>
+			</div>
+
+			<div class="row">
+
+				<?php if($log_query->have_posts()): ?>
+
+					<?php while($log_query->have_posts()): $log_query->the_post(); ?>
+
+						<div class="col-md-4<?php if($log_query->current_post > 0){ echo " d-none d-md-block"; } ?>">
+							<div class="thumb">
+								<h4 class="title"><?php echo $log_query->post->post_title; ?></h4>
+								<span class="date">Publié le <?php echo get_the_time("j F Y", $log_query->post->ID); ?></span>
+								<img src="<?php echo get_the_post_thumbnail_url($log_query->post->ID); ?>" alt="thumbnail">
+								<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button">En savoir +</a>
+								<div class="clear"></div>
+							</div>
+						</div>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+
+			</div>
+
+		</div>
+
+	</section>
 
 </main>
 

@@ -2,8 +2,45 @@
 @import "../variables/fonts";
 
 .l-header{
+	position:relative;
 	padding:1em 0;
 	background-color:@black;
+
+	.mobile-menu-button{
+		position:absolute;
+		top:1em;
+		right:1em;
+		width:20px;
+		height:16px;
+		z-index:999;
+
+		span{
+			position:absolute;
+			display:block;
+			height:2px;
+			width:100%;
+			left:0;
+			background-color:#ffffff;
+			-webkit-border-radius:2px;
+			-moz-border-radius:2px;
+			border-radius:2px;
+
+			&:nth-child(1){
+				top:0;
+			}
+			&:nth-child(2){
+				top:50%;
+				-webkit-transform:translateY(-50%);
+				-moz-transform:translateY(-50%);
+				-ms-transform:translateY(-50%);
+				-o-transform:translateY(-50%);
+				transform:translateY(-50%);
+			}
+			&:nth-child(3){
+				 bottom:0;
+			 }
+		}
+	}
 
 	*{
 		color:@white;
@@ -49,6 +86,48 @@
 			&.current_page_item{
 				a{
 					color:@yellow;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px){
+	.l-header{
+		padding-bottom:0;
+
+		> .container > .row > .col{
+			text-align:center;
+		}
+
+		.nav{
+			padding:1em;
+			margin:0 -15px;
+			background-color:@white;
+			text-align:left;
+
+			ul{
+				padding:0;
+				margin:0;
+
+				li{
+					display:block;
+
+					a{
+						display:block;
+						border-bottom:1px solid #ddd;
+						color:@black;
+
+						&:after{
+							display:none;
+						}
+					}
+
+					&:last-child{
+						a{
+							border:none;
+						}
+					}
 				}
 			}
 		}
