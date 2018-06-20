@@ -31,28 +31,15 @@ $blog_posts_query = new WP_Query([
 
 		<div class="container">
 
-			<div class="row">
+			<h1 class="page-title">Le blog du petit théâtre du bout du monde</h1>
 
-				<div class="col-7">
-
-					<h1 class="page-title">Le blog du petit théâtre</h1>
-
-					<strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis corporis debitis dignissimos dolore eum inventore laboriosam optio, pariatur possimus praesentium, ut voluptatem! Aliquam animi fuga numquam voluptates. Ipsum, reprehenderit?</strong>
-
-				</div>
-				<div class="col-5">
-
-					<img src="http://via.placeholder.com/350x150" alt="">
-
-				</div>
-
-			</div>
+			<strong>Découvrez l'avancement du projet étape par étape grâce à notre carnet de bord qui partage avec vous l'évolution du Petit théâtre du bout du monde au jour le jour.<br>Tenez vous également informé de l'actualité du monde du théâtre et de la marionnette.</strong>
 
 			<div class="filters">
 
 				<span>Filtres:</span>
 				<a href="<?php echo $clean_url; ?>?filter=log" class="button button-narrow button-rounded<?php if($filter_post_type == "log"){ echo " active"; } ?>">Carnet de bord du projet</a>
-				<a href="<?php echo $clean_url; ?>?filter=post" class="button button-narrow button-rounded<?php if($filter_post_type == "post"){ echo " active"; } ?>">Actualités du théâtre et de la marionette</a>
+				<a href="<?php echo $clean_url; ?>?filter=post" class="button button-narrow button-rounded<?php if($filter_post_type == "post"){ echo " active"; } ?>">Actualités</a>
 
 			</div>
 

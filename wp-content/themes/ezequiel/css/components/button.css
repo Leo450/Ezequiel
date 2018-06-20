@@ -1,17 +1,19 @@
 .button {
   display: inline-block;
   padding: 1.2em 2em 1em 2em;
-  border: 1px solid black;
+  border: 1px solid #000;
   text-transform: uppercase;
   color: #000;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  /* Types */
+  /* Colors */
 }
 .button.button-narrow {
   padding: .5em .7em .3em .7em;
-}
-.button.button-filled {
-  background-color: #000;
-  border: none;
-  color: #fff;
 }
 .button.button-bold {
   font-weight: 400;
@@ -21,6 +23,30 @@
   -moz-border-radius: 999px;
   border-radius: 999px;
 }
+.button.button-filled {
+  background-color: #000;
+  color: #fff;
+}
+.button.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.button:not(.button-filled):hover {
+  background-color: #000;
+  color: #fff;
+}
+.button.button-black-on-yellow.button-filled {
+  background-color: #000;
+  color: #f2c169;
+}
+.button.button-black-on-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.button.button-black-on-yellow:not(.button-filled):hover {
+  background-color: #000;
+  color: #f2c169;
+}
 .button.button-yellow {
   border-color: #f2c169;
   color: #f2c169;
@@ -29,11 +55,27 @@
   background-color: #f2c169;
   color: #000;
 }
+.button.button-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #f2c169;
+}
+.button.button-yellow:not(.button-filled):hover {
+  background-color: #f2c169;
+  color: #000;
+}
 .button.button-white {
   border-color: #fff;
   color: #fff;
 }
 .button.button-white.button-filled {
+  background-color: #fff;
+  color: #000;
+}
+.button.button-white.button-filled:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.button.button-white:not(.button-filled):hover {
   background-color: #fff;
   color: #000;
 }

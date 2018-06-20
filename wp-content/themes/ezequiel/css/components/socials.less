@@ -1,0 +1,25 @@
+@import "../variables/colors";
+
+.socials{
+	.icon{
+		display:inline-block;
+		height:1.7em;
+		margin-left:1.5em;
+
+		svg{
+			height:100%;
+			fill:@yellow;
+			-webkit-transition:fill .1s ease;
+			-moz-transition:fill .1s ease;
+			-ms-transition:fill .1s ease;
+			-o-transition:fill .1s ease;
+			transition:fill .1s ease;
+		}
+
+		&:hover{
+			svg{
+				fill:@white;
+			}
+		}
+	}
+}

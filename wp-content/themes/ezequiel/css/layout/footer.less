@@ -17,9 +17,35 @@
 		.contact{
 			padding-left:4em;
 
+			> a{
+				&:hover{
+					padding:.5em 1.2em .3em 1.2em;
+				}
+			}
+
 			.follow{
 				margin-top:1em;
 				text-transform:uppercase;
+				color:@white;
+			}
+		}
+
+		.follow{
+			display:flex;
+			align-items:center;
+
+			.socials{
+				display:inline-block;
+				font-size:.8em;
+			}
+		}
+
+		.links{
+			padding-left:1em;
+			border-left:1px solid #999;
+
+			a{
+				display:block;
 				color:@white;
 			}
 		}

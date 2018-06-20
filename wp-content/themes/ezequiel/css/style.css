@@ -141,6 +141,14 @@ body {
   margin-right: 1px;
   text-transform: uppercase;
   font-weight: 400;
+  -webkit-transition: color .1s ease;
+  -moz-transition: color .1s ease;
+  -ms-transition: color .1s ease;
+  -o-transition: color .1s ease;
+  transition: color .1s ease;
+}
+.l-header .nav li a:hover {
+  color: #ccc;
 }
 .l-header .nav li a:after {
   content: '';
@@ -160,6 +168,15 @@ body {
 }
 .l-header .nav li.current_page_item a {
   color: #f2c169;
+}
+.l-header .nav li:last-child a {
+  margin-left: 2em;
+  padding: .7em 2em .5em 2em;
+  background-color: #f2c169;
+  color: #000;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  border-radius: 999px;
 }
 @media (max-width: 575px) {
   .l-header {
@@ -209,9 +226,28 @@ body {
 .l-footer .l-footer__top .contact {
   padding-left: 4em;
 }
+.l-footer .l-footer__top .contact > a:hover {
+  padding: .5em 1.2em .3em 1.2em;
+}
 .l-footer .l-footer__top .contact .follow {
   margin-top: 1em;
   text-transform: uppercase;
+  color: #fff;
+}
+.l-footer .l-footer__top .follow {
+  display: flex;
+  align-items: center;
+}
+.l-footer .l-footer__top .follow .socials {
+  display: inline-block;
+  font-size: .8em;
+}
+.l-footer .l-footer__top .links {
+  padding-left: 1em;
+  border-left: 1px solid #999;
+}
+.l-footer .l-footer__top .links a {
+  display: block;
   color: #fff;
 }
 .l-footer .l-footer__bottom {
@@ -330,23 +366,45 @@ article p:not(.empty):before {
   top: 0;
   background-color: #dddddd;
 }
+article a:not(.button) {
+  text-decoration: underline;
+}
 article ul {
   margin-left: 2.5em;
+}
+.socials .icon {
+  display: inline-block;
+  height: 1.7em;
+  margin-left: 1.5em;
+}
+.socials .icon svg {
+  height: 100%;
+  fill: #f2c169;
+  -webkit-transition: fill .1s ease;
+  -moz-transition: fill .1s ease;
+  -ms-transition: fill .1s ease;
+  -o-transition: fill .1s ease;
+  transition: fill .1s ease;
+}
+.socials .icon:hover svg {
+  fill: #fff;
 }
 .button {
   display: inline-block;
   padding: 1.2em 2em 1em 2em;
-  border: 1px solid black;
+  border: 1px solid #000;
   text-transform: uppercase;
   color: #000;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  /* Types */
+  /* Colors */
 }
 .button.button-narrow {
   padding: .5em .7em .3em .7em;
-}
-.button.button-filled {
-  background-color: #000;
-  border: none;
-  color: #fff;
 }
 .button.button-bold {
   font-weight: 400;
@@ -356,6 +414,30 @@ article ul {
   -moz-border-radius: 999px;
   border-radius: 999px;
 }
+.button.button-filled {
+  background-color: #000;
+  color: #fff;
+}
+.button.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.button:not(.button-filled):hover {
+  background-color: #000;
+  color: #fff;
+}
+.button.button-black-on-yellow.button-filled {
+  background-color: #000;
+  color: #f2c169;
+}
+.button.button-black-on-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.button.button-black-on-yellow:not(.button-filled):hover {
+  background-color: #000;
+  color: #f2c169;
+}
 .button.button-yellow {
   border-color: #f2c169;
   color: #f2c169;
@@ -364,11 +446,27 @@ article ul {
   background-color: #f2c169;
   color: #000;
 }
+.button.button-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #f2c169;
+}
+.button.button-yellow:not(.button-filled):hover {
+  background-color: #f2c169;
+  color: #000;
+}
 .button.button-white {
   border-color: #fff;
   color: #fff;
 }
 .button.button-white.button-filled {
+  background-color: #fff;
+  color: #000;
+}
+.button.button-white.button-filled:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.button.button-white:not(.button-filled):hover {
   background-color: #fff;
   color: #000;
 }
@@ -388,6 +486,7 @@ article ul {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: #fff;
 }
 .thumb div.thumbnail {
   position: relative;
@@ -431,7 +530,8 @@ article ul {
 .thumb.thumb-full .title {
   font-family: playfair, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  text-transform: none;
 }
 .thumb.thumb-full .date {
   margin-top: 1em;
@@ -496,18 +596,20 @@ form input[type="submit"] {
   margin-left: 2em;
   display: inline-block;
   padding: 1.2em 2em 1em 2em;
-  border: 1px solid black;
+  border: 1px solid #000;
   text-transform: uppercase;
   color: #000;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  /* Types */
+  /* Colors */
   padding: .5em .7em .3em .7em;
 }
 .comments .comment .comment-body .reply.button-narrow {
   padding: .5em .7em .3em .7em;
-}
-.comments .comment .comment-body .reply.button-filled {
-  background-color: #000;
-  border: none;
-  color: #fff;
 }
 .comments .comment .comment-body .reply.button-bold {
   font-weight: 400;
@@ -517,11 +619,43 @@ form input[type="submit"] {
   -moz-border-radius: 999px;
   border-radius: 999px;
 }
+.comments .comment .comment-body .reply.button-filled {
+  background-color: #000;
+  color: #fff;
+}
+.comments .comment .comment-body .reply.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.comments .comment .comment-body .reply:not(.button-filled):hover {
+  background-color: #000;
+  color: #fff;
+}
+.comments .comment .comment-body .reply.button-black-on-yellow.button-filled {
+  background-color: #000;
+  color: #f2c169;
+}
+.comments .comment .comment-body .reply.button-black-on-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.comments .comment .comment-body .reply.button-black-on-yellow:not(.button-filled):hover {
+  background-color: #000;
+  color: #f2c169;
+}
 .comments .comment .comment-body .reply.button-yellow {
   border-color: #f2c169;
   color: #f2c169;
 }
 .comments .comment .comment-body .reply.button-yellow.button-filled {
+  background-color: #f2c169;
+  color: #000;
+}
+.comments .comment .comment-body .reply.button-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #f2c169;
+}
+.comments .comment .comment-body .reply.button-yellow:not(.button-filled):hover {
   background-color: #f2c169;
   color: #000;
 }
@@ -533,24 +667,34 @@ form input[type="submit"] {
   background-color: #fff;
   color: #000;
 }
+.comments .comment .comment-body .reply.button-white.button-filled:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.comments .comment .comment-body .reply.button-white:not(.button-filled):hover {
+  background-color: #fff;
+  color: #000;
+}
 .comments .comment .comment-respond {
   margin-top: 2em;
 }
 .comments .comment .comment-respond #cancel-comment-reply-link {
   display: inline-block;
   padding: 1.2em 2em 1em 2em;
-  border: 1px solid black;
+  border: 1px solid #000;
   text-transform: uppercase;
   color: #000;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  /* Types */
+  /* Colors */
   padding: .5em .7em .3em .7em;
 }
 .comments .comment .comment-respond #cancel-comment-reply-link.button-narrow {
   padding: .5em .7em .3em .7em;
-}
-.comments .comment .comment-respond #cancel-comment-reply-link.button-filled {
-  background-color: #000;
-  border: none;
-  color: #fff;
 }
 .comments .comment .comment-respond #cancel-comment-reply-link.button-bold {
   font-weight: 400;
@@ -560,6 +704,30 @@ form input[type="submit"] {
   -moz-border-radius: 999px;
   border-radius: 999px;
 }
+.comments .comment .comment-respond #cancel-comment-reply-link.button-filled {
+  background-color: #000;
+  color: #fff;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link:not(.button-filled):hover {
+  background-color: #000;
+  color: #fff;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-black-on-yellow.button-filled {
+  background-color: #000;
+  color: #f2c169;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-black-on-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #000;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-black-on-yellow:not(.button-filled):hover {
+  background-color: #000;
+  color: #f2c169;
+}
 .comments .comment .comment-respond #cancel-comment-reply-link.button-yellow {
   border-color: #f2c169;
   color: #f2c169;
@@ -568,11 +736,27 @@ form input[type="submit"] {
   background-color: #f2c169;
   color: #000;
 }
+.comments .comment .comment-respond #cancel-comment-reply-link.button-yellow.button-filled:hover {
+  background-color: transparent;
+  color: #f2c169;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-yellow:not(.button-filled):hover {
+  background-color: #f2c169;
+  color: #000;
+}
 .comments .comment .comment-respond #cancel-comment-reply-link.button-white {
   border-color: #fff;
   color: #fff;
 }
 .comments .comment .comment-respond #cancel-comment-reply-link.button-white.button-filled {
+  background-color: #fff;
+  color: #000;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-white.button-filled:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.comments .comment .comment-respond #cancel-comment-reply-link.button-white:not(.button-filled):hover {
   background-color: #fff;
   color: #000;
 }

@@ -3,18 +3,18 @@
 .button{
 	display:inline-block;
 	padding:1.2em 2em 1em 2em;
-	border:1px solid black;
+	border:1px solid @black;
 	text-transform:uppercase;
 	color:@black;
+	-webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	-ms-transition:all .2s ease;
+	-o-transition:all .2s ease;
+	transition:all .2s ease;
 
+	/* Types */
 	&.button-narrow{
 		padding:.5em .7em .3em .7em;
-	}
-
-	&.button-filled{
-		background-color:@black;
-		border:none;
-		color:@white;
 	}
 
 	&.button-bold{
@@ -27,6 +27,33 @@
 		border-radius:999px;
 	}
 
+	&.button-filled{
+		background-color:@black;
+		color:@white;
+	}
+	&.button-filled:hover{
+		background-color:transparent;
+		color:@black;
+	}
+	&:not(.button-filled):hover{
+		.button-filled();
+	}
+
+	/* Colors */
+	&.button-black-on-yellow{
+		&.button-filled{
+			background-color:@black;
+			color:@yellow;
+		}
+		&.button-filled:hover{
+			background-color:transparent;
+			color:@black;
+		}
+		&:not(.button-filled):hover{
+			.button-filled();
+		}
+	}
+
 	&.button-yellow{
 		border-color:@yellow;
 		color:@yellow;
@@ -35,7 +62,15 @@
 			background-color:@yellow;
 			color:@black;
 		}
+		&.button-filled:hover{
+			background-color:transparent;
+			color:@yellow;
+		}
+		&:not(.button-filled):hover{
+			.button-filled();
+		}
 	}
+
 	&.button-white{
 		border-color:@white;
 		color:@white;
@@ -43,6 +78,13 @@
 		&.button-filled{
 			background-color:@white;
 			color:@black;
+		}
+		&.button-filled:hover{
+			background-color:transparent;
+			color:@white;
+		}
+		&:not(.button-filled):hover{
+			.button-filled();
 		}
 	}
 }

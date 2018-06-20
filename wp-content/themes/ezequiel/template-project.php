@@ -96,7 +96,7 @@ $log_query = new WP_Query([
 								<h4 class="title"><?php echo $log_query->post->post_title; ?></h4>
 								<span class="date">Publié le <?php echo get_the_time("j F Y", $log_query->post->ID); ?></span>
 								<img src="<?php echo get_the_post_thumbnail_url($log_query->post->ID); ?>" alt="thumbnail">
-								<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button">En savoir +</a>
+								<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button button-black-on-yellow">En savoir +</a>
 								<div class="clear"></div>
 							</div>
 						</div>

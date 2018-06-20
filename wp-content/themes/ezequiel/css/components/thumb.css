@@ -40,7 +40,8 @@
 .thumb.thumb-full .title {
   font-family: playfair, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: italic;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  text-transform: none;
 }
 .thumb.thumb-full .date {
   margin-top: 1em;

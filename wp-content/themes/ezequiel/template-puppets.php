@@ -36,7 +36,7 @@ $puppets_posts_query = new WP_Query([
 									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($puppets_posts_query->post->ID); ?>');"></div>
 								</div>
 								<h4 class="title"><?php echo $puppets_posts_query->post->post_title; ?></h4>
-								<a href="<?php echo get_permalink($puppets_posts_query->post->ID); ?>" class="button">En savoir +</a>
+								<a href="<?php echo get_permalink($puppets_posts_query->post->ID); ?>" class="button">Voir</a>
 								<div class="clear"></div>
 							</div>
 

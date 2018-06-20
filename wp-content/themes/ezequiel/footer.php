@@ -19,17 +19,21 @@
 							<div class="col">
 								<div class="contact">
 
-									<a class="button button-yellow button-narrow">Contact presse</a>
+									<a href="/presse-et-contact/" class="button button-yellow button-narrow">Contact presse</a>
 
 									<div class="follow">
 										Suivez-nous
+										<?php get_template_part('socials'); ?>
 									</div>
 
 								</div>
 							</div>
 
 							<div class="col col-auto">
-								<div class="links"></div>
+								<div class="links">
+									<a href="/plan-du-site/">Plan du site</a>
+									<a href="/mentions-legales/">Mentions légales</a>
+								</div>
 							</div>
 
 						</div>

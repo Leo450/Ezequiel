@@ -104,7 +104,7 @@ $log_query = new WP_Query([
 											<h4 class="title"><?php echo $log_query->post->post_title; ?></h4>
 											<span class="date">Publié le <?php echo get_the_time("j F Y", $log_query->post->ID); ?></span>
 											<img src="<?php echo get_the_post_thumbnail_url($log_query->post->ID); ?>" alt="thumbnail">
-											<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button">En savoir +</a>
+											<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button button-black-on-yellow">Lire</a>
 											<div class="clear"></div>
 										</div>
 
@@ -159,7 +159,7 @@ $log_query = new WP_Query([
 								<h4 class="title"><?php echo $post_query->post->post_title; ?></h4>
 								<span class="date">Publié le <?php echo get_the_time("j F Y", $post_query->post->ID); ?></span>
 								<p class="desc"><?php echo $post_query->post->post_excerpt; ?></p>
-								<a href="#" class="button button-white">En savoir +</a>
+								<a href="<?php echo get_permalink($post_query->post->ID); ?>" class="button button-white">Lire</a>
 								<div class="clear"></div>
 							</div>
 						</div>
@@ -183,7 +183,7 @@ $log_query = new WP_Query([
 			</div>
 
 			<div class="quote">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid distinctio dolore exercitationem ipsam itaque labore laudantium mollitia, natus nisi nostrum officiis quia quidem quisquam quos reprehenderit unde veritatis vitae voluptatem.</p>
+				<p>Ce titre évocateur de pays lointains nous parle du monde d'aujourd'hui, d'ici même, au milieu de nos utopies. D'ici même au bout d'un rêve au milieu de nos renoncements.</p>
 				<div class="author">Ezéquiel Garcia Roméo</div>
 				<span class="clear"></span>
 			</div>

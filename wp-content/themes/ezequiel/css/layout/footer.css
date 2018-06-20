@@ -14,9 +14,28 @@
 .l-footer .l-footer__top .contact {
   padding-left: 4em;
 }
+.l-footer .l-footer__top .contact > a:hover {
+  padding: .5em 1.2em .3em 1.2em;
+}
 .l-footer .l-footer__top .contact .follow {
   margin-top: 1em;
   text-transform: uppercase;
+  color: #fff;
+}
+.l-footer .l-footer__top .follow {
+  display: flex;
+  align-items: center;
+}
+.l-footer .l-footer__top .follow .socials {
+  display: inline-block;
+  font-size: .8em;
+}
+.l-footer .l-footer__top .links {
+  padding-left: 1em;
+  border-left: 1px solid #999;
+}
+.l-footer .l-footer__top .links a {
+  display: block;
   color: #fff;
 }
 .l-footer .l-footer__bottom {

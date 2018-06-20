@@ -60,9 +60,7 @@
 
 						<div class="d-none d-md-block col col-auto">
 							<!-- socials -->
-							<div class="socials">
-								qzd
-							</div>
+							<?php get_template_part('socials'); ?>
 							<!-- /socials -->
 						</div>
 

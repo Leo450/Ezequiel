@@ -6,7 +6,7 @@
 .project-menu li {
   position: relative;
   height: 58px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .project-menu li a {
   position: absolute;
@@ -20,11 +20,35 @@
   font-weight: 400;
   text-align: center;
 }
+.project-menu li a .project-menu-item-thumbnail {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  width: 6em;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 5px 0 0 black;
+  -moz-box-shadow: 5px 0 0 black;
+  box-shadow: 5px 0 0 black;
+}
+.project-menu li a .project-menu-item-thumbnail div {
+  padding-bottom: 100%;
+}
 .project-menu li a span {
   position: absolute;
   top: 50%;
-  left: 6em;
-  right: 4em;
+  left: 8em;
+  right: 2em;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);

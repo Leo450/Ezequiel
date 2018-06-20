@@ -1,9 +1,9 @@
 .filters {
-  margin-bottom: 2em;
+  margin: 2em 0;
 }
 .filters span {
   margin-right: 1em;
-  color: #ddd;
+  color: #999;
 }
 .filters .button {
   color: #000;

@@ -19,6 +19,9 @@ article p:not(.empty):before {
   top: 0;
   background-color: #dddddd;
 }
+article a:not(.button) {
+  text-decoration: underline;
+}
 article ul {
   margin-left: 2.5em;
 }

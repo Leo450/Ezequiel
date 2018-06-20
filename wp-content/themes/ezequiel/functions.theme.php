@@ -16,10 +16,10 @@ function ez_styles()
 
 	ez_load_page_template_asset("css");
 
-	if(is_single()){
+	//if(is_single()){
 		wp_register_style('single', get_template_directory_uri() . '/css/pages/single.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('single');
-	}
+	//}
 
 	if(is_404()){
 		wp_register_style('404-index', get_template_directory_uri() . '/css/pages/404/index.css', array(), '1.0.0', 'all');
@@ -51,10 +51,10 @@ function ez_scripts()
 
 	ez_load_page_template_asset("js");
 
-	if(is_single()){
+	//if(is_single()){
 		wp_register_script('single-layout', get_template_directory_uri() . '/js/single-layout.js', array(), '1.0.0', 'all');
 		wp_enqueue_script('single-layout');
-	}
+	//}
 
 }
 
@@ -135,6 +135,33 @@ function ez_modify_comment_form_comment_field_template($field)
 
 }
 
+function ez_nav_menu_project_items($items)
+{
+
+	$menu_items = wp_get_nav_menu_items('project');
+	$explode = explode("\n", $items);
+	$output = "";
+
+	foreach($menu_items as $k => $menu_item){
+
+		$output .= str_replace('<span>', '<div class="project-menu-item-thumbnail" style="background-image:url(' . get_the_post_thumbnail_url((int)$menu_item->object_id) . ');"><div></div></div><span>', $explode[$k]);
+	}
+
+	return $output;
+
+}
+
+/*------------------------------------*\
+	Menus
+\*------------------------------------*/
+
+function ez_register_menu()
+{
+	register_nav_menus([
+		'project-menu' => __('Project Menu', 'ezequiel')
+	]);
+}
+
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
@@ -210,13 +237,6 @@ function ez_cpt()
 
 }
 
-function ez_register_menu()
-{
-	register_nav_menus([
-		'project-menu' => __('Project Menu', 'ezequiel')
-	]);
-}
-
 /*------------------------------------*\
 	Bind
 \*------------------------------------*/
@@ -237,6 +257,7 @@ add_filter('comment_form_fields', 'ez_reorder_comment_form_fields');
 add_filter('comment_form_field_author', 'ez_modify_comment_form_field_template');
 add_filter('comment_form_field_email', 'ez_modify_comment_form_field_template');
 add_filter('comment_form_field_comment', 'ez_modify_comment_form_comment_field_template');
+add_filter('wp_nav_menu_project_items', 'ez_nav_menu_project_items');
 
 /*------------------------------------*\
 	Helpers
@@ -319,8 +340,7 @@ function ez_pagination($query, $paged)
 
 	echo paginate_links([
 		'total' => $query->max_num_pages,
-		'current' => $paged,
-		'prev_text' => "<span>qzd</span>"
+		'current' => $paged
 	]);
 
 	echo '</div><div class="clear"></div></div>';

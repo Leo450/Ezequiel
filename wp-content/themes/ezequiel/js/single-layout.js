@@ -5,6 +5,11 @@
 		'use strict';
 
 		var img = $('article img.attachment-post-thumbnail').get(0);
+
+		if(!img){
+			return;
+		}
+
 		var imgBounds = img.getBoundingClientRect();
 		var imgStyle = window.getComputedStyle(img);
 

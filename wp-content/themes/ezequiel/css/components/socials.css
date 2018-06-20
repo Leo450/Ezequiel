@@ -1,0 +1,17 @@
+.socials .icon {
+  display: inline-block;
+  height: 1.7em;
+  margin-left: 1.5em;
+}
+.socials .icon svg {
+  height: 100%;
+  fill: #f2c169;
+  -webkit-transition: fill .1s ease;
+  -moz-transition: fill .1s ease;
+  -ms-transition: fill .1s ease;
+  -o-transition: fill .1s ease;
+  transition: fill .1s ease;
+}
+.socials .icon:hover svg {
+  fill: #fff;
+}
