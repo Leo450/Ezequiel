@@ -85,7 +85,7 @@ $log_query = new WP_Query([
 				<h3 class="sub-title">Grâce au carnet de bord</h3>
 			</div>
 
-			<div class="row">
+			<div class="row thumbs-row">
 
 				<?php if($log_query->have_posts()): ?>
 

@@ -32,7 +32,14 @@ $log_query = new WP_Query([
 
 				<h1 class="page-title"><?php the_title(); ?></h1>
 
-				<?php if($members_posts_query->have_posts()): ?>
+				<?php if($members_posts_query->have_posts()):
+
+					$job_value = get_post_custom_values("job", $members_posts_query->post->ID);
+					if(is_array($job_value) && count($job_value) == 1){
+						$job_value = $job_value[0];
+					}
+
+					?>
 
 					<div class="row">
 
@@ -48,7 +55,9 @@ $log_query = new WP_Query([
 									</div>
 									<div class="col-7">
 										<h4 class="title"><?php echo $members_posts_query->post->post_title; ?></h4>
-										<span class="legend">Artiste Scénographe</span>
+										<?php if(!empty($job_value)): ?>
+											<span class="legend"><?php echo $job_value ?></span>
+										<?php endif; ?>
 										<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur consequatur, culpa deleniti dicta dignissimos dolorum eius exercitationem libero magnam nam non odit officia optio quam reiciendis repellendus. A, unde!</p>
 										<a href="<?php echo get_permalink($members_posts_query->post->ID); ?>" class="button">En savoir +</a>
 									</div>
@@ -60,7 +69,14 @@ $log_query = new WP_Query([
 
 							<div class="row">
 
-								<?php while($members_posts_query->have_posts()): $members_posts_query->the_post(); ?>
+								<?php while($members_posts_query->have_posts()): $members_posts_query->the_post();
+
+									$job_value = get_post_custom_values("job", $members_posts_query->post->ID);
+									if(is_array($job_value) && count($job_value) == 1){
+										$job_value = $job_value[0];
+									}
+
+									?>
 
 									<div class="col-6 col-md-4">
 
@@ -69,7 +85,9 @@ $log_query = new WP_Query([
 												<div style="background-image:url('<?php echo get_the_post_thumbnail_url($members_posts_query->post->ID); ?>');"></div>
 											</div>
 											<h4 class="title"><?php echo $members_posts_query->post->post_title; ?></h4>
-											<span class="legend">Artiste Scénographe</span>
+											<?php if(!empty($job_value)): ?>
+												<span class="legend"><?php echo $job_value ?></span>
+											<?php endif; ?>
 										</a>
 
 									</div>

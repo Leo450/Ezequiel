@@ -1,3 +1,6 @@
+article {
+  /* Article layout */
+}
 article h1 {
   font-style: italic;
 }
@@ -24,4 +27,23 @@ article a:not(.button) {
 }
 article ul {
   margin-left: 2.5em;
+}
+article .attachment-post-thumbnail {
+  float: left;
+  max-width: 50%;
+  margin-right: 4em;
+}
+article .meta .wpcr_tooltip {
+  float: none;
+  width: auto;
+}
+article .meta .wpcr_tooltip .wpcr_stars {
+  display: none;
+}
+article .meta .wpcr_tooltip .wpcr_averageStars {
+  float: none;
+  margin: 0;
+}
+article .content {
+  margin-top: 2em;
 }

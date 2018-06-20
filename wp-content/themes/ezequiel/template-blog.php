@@ -6,7 +6,7 @@ global $wp;
 $current_url = home_url($wp->request);
 $clean_url = substr($current_url, 0, strpos($current_url , '/page'));
 
-$filter_post_type  = "post";
+$filter_post_type  = "";
 $allowed_post_type = ["post", "log"];
 if(isset($_GET['filter']) && in_array($_GET['filter'], $allowed_post_type)){
 	$filter_post_type = $_GET['filter'];
@@ -14,7 +14,7 @@ if(isset($_GET['filter']) && in_array($_GET['filter'], $allowed_post_type)){
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $blog_posts_query = new WP_Query([
-	'post_type'=> $filter_post_type,
+	'post_type'=> (empty($filter_post_type))? $allowed_post_type : $filter_post_type,
 	'order'    => 'ASC',
 	'posts_per_page' => 7,
 	'paged' => $paged
@@ -38,6 +38,7 @@ $blog_posts_query = new WP_Query([
 			<div class="filters">
 
 				<span>Filtres:</span>
+				<a href="<?php echo $clean_url; ?>?filter=null" class="button button-narrow button-rounded<?php if(empty($filter_post_type)){ echo " active"; } ?>">Tout voir</a>
 				<a href="<?php echo $clean_url; ?>?filter=log" class="button button-narrow button-rounded<?php if($filter_post_type == "log"){ echo " active"; } ?>">Carnet de bord du projet</a>
 				<a href="<?php echo $clean_url; ?>?filter=post" class="button button-narrow button-rounded<?php if($filter_post_type == "post"){ echo " active"; } ?>">Actualités</a>
 

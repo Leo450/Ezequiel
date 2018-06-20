@@ -16,11 +16,6 @@ function ez_styles()
 
 	ez_load_page_template_asset("css");
 
-	//if(is_single()){
-		wp_register_style('single', get_template_directory_uri() . '/css/pages/single.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('single');
-	//}
-
 	if(is_404()){
 		wp_register_style('404-index', get_template_directory_uri() . '/css/pages/404/index.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('404-index');
@@ -46,15 +41,16 @@ function ez_scripts()
 	wp_register_script('mobile-menu', get_template_directory_uri() . '/js/mobile-menu.js', array(), '1.0.0', 'all');
 	wp_enqueue_script('mobile-menu');
 
+	wp_register_script('article-layout', get_template_directory_uri() . '/js/article-layout.js', array(), '1.0.0', 'all');
+	wp_enqueue_script('article-layout');
+
+	wp_register_script('thumbs-row', get_template_directory_uri() . '/js/thumbs-row.js', array(), '1.0.0', 'all');
+	wp_enqueue_script('thumbs-row');
+
 	wp_register_script('wp-post-comment-rating', get_template_directory_uri() . '/js/wp-post-comment-rating.js', array(), '1.0.0', 'all');
 	wp_enqueue_script('wp-post-comment-rating');
 
 	ez_load_page_template_asset("js");
-
-	//if(is_single()){
-		wp_register_script('single-layout', get_template_directory_uri() . '/js/single-layout.js', array(), '1.0.0', 'all');
-		wp_enqueue_script('single-layout');
-	//}
 
 }
 
@@ -138,11 +134,17 @@ function ez_modify_comment_form_comment_field_template($field)
 function ez_nav_menu_project_items($items)
 {
 
+	global $post;
+
 	$menu_items = wp_get_nav_menu_items('project');
 	$explode = explode("\n", $items);
 	$output = "";
 
 	foreach($menu_items as $k => $menu_item){
+
+		if((int)$menu_item->object_id == $post->ID){
+			continue;
+		}
 
 		$output .= str_replace('<span>', '<div class="project-menu-item-thumbnail" style="background-image:url(' . get_the_post_thumbnail_url((int)$menu_item->object_id) . ');"><div></div></div><span>', $explode[$k]);
 	}
@@ -230,7 +232,8 @@ function ez_cpt()
 			'supports' => [
 				'title',
 				'editor',
-				'thumbnail'
+				'thumbnail',
+				'custom-fields'
 			],
 		]
 	);
