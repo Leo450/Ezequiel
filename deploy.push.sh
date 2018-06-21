@@ -35,7 +35,7 @@ if [[ -z $commit_message ]]; then
     commit_message="Automatic deploy commit message."
 fi
 git add *
-git commit -m $commit_message
+git commit -m "$commit_message"
 git push
 
 
