@@ -5,10 +5,23 @@
 	margin:0;
 	list-style:none;
 
-	li{
+	li.menu-item{
 		position:relative;
 		height:58px;
 		margin-bottom:2em;
+
+		&.current-menu-item{
+			a{
+				background-color:@white;
+				color:@black;
+
+				.project-menu-item-thumbnail{
+					-webkit-box-shadow:5px 0 0 white;
+					-moz-box-shadow:5px 0 0 white;
+					box-shadow:5px 0 0 white;
+				}
+			}
+		}
 
 		a{
 			position:absolute;

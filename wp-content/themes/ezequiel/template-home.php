@@ -103,7 +103,9 @@ $log_query = new WP_Query([
 										<div class="thumb">
 											<h4 class="title"><?php echo $log_query->post->post_title; ?></h4>
 											<span class="date">Publié le <?php echo get_the_time("j F Y", $log_query->post->ID); ?></span>
-											<img src="<?php echo get_the_post_thumbnail_url($log_query->post->ID); ?>" alt="thumbnail">
+											<div class="thumbnail">
+												<div style="background-image:url('<?php echo get_the_post_thumbnail_url($log_query->post->ID); ?>');"></div>
+											</div>
 											<a href="<?php echo get_permalink($log_query->post->ID); ?>" class="button button-black-on-yellow">Lire</a>
 											<div class="clear"></div>
 										</div>
@@ -155,7 +157,9 @@ $log_query = new WP_Query([
 
 						<div class="col-md-4<?php if($post_query->current_post > 0){ echo " d-none d-md-block"; } ?>">
 							<div class="thumb thumb-full">
-								<img src="<?php echo get_the_post_thumbnail_url($post_query->post->ID); ?>" alt="">
+								<div class="thumbnail">
+									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($post_query->post->ID); ?>');"></div>
+								</div>
 								<h4 class="title"><?php echo $post_query->post->post_title; ?></h4>
 								<span class="date">Publié le <?php echo get_the_time("j F Y", $post_query->post->ID); ?></span>
 								<p class="desc"><?php echo $post_query->post->post_excerpt; ?></p>
@@ -184,7 +188,7 @@ $log_query = new WP_Query([
 
 			<div class="quote">
 				<p>Ce titre évocateur de pays lointains nous parle du monde d'aujourd'hui, d'ici même, au milieu de nos utopies. D'ici même au bout d'un rêve au milieu de nos renoncements.</p>
-				<div class="author">Ezéquiel Garcia Roméo</div>
+				<div class="author">Ezéquiel Garcia-Romeu</div>
 				<span class="clear"></span>
 			</div>
 

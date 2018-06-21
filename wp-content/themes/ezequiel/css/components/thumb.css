@@ -1,5 +1,8 @@
 .thumb div.thumbnail {
   position: relative;
+  padding-bottom: 61%;
+}
+.thumb div.thumbnail.thumbnail-square {
   padding-bottom: 100%;
 }
 .thumb div.thumbnail > div {

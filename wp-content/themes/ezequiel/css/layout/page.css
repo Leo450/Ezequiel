@@ -3,3 +3,14 @@
   text-transform: uppercase;
   font-size: 2em;
 }
+.page-title-container {
+  margin: 2em 0;
+}
+.page-title-container .page-title {
+  margin: 0;
+}
+.page-title-container .page-subtitle {
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-style: italic;
+}

@@ -345,6 +345,17 @@ body {
   text-transform: uppercase;
   font-size: 2em;
 }
+.page-title-container {
+  margin: 2em 0;
+}
+.page-title-container .page-title {
+  margin: 0;
+}
+.page-title-container .page-subtitle {
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-style: italic;
+}
 article {
   /* Article layout */
 }
@@ -375,10 +386,16 @@ article a:not(.button) {
 article ul {
   margin-left: 2.5em;
 }
-article .attachment-post-thumbnail {
+article .article-thumbnail {
   float: left;
   max-width: 50%;
-  margin-right: 4em;
+  margin: 0 4em 4em 0;
+}
+article .article-thumbnail .attachment-post-thumbnail {
+  margin-bottom: 1em;
+}
+article .meta {
+  float: left;
 }
 article .meta .wpcr_tooltip {
   float: none;
@@ -393,6 +410,19 @@ article .meta .wpcr_tooltip .wpcr_averageStars {
 }
 article .content {
   margin-top: 2em;
+}
+.breadcrumb {
+  padding: 2em 0 1em 0;
+}
+.breadcrumb ul.breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.breadcrumb ul.breadcrumbs li {
+  margin-right: 1em;
 }
 .socials .icon {
   display: inline-block;
@@ -512,6 +542,9 @@ article .content {
 }
 .thumb div.thumbnail {
   position: relative;
+  padding-bottom: 61%;
+}
+.thumb div.thumbnail.thumbnail-square {
   padding-bottom: 100%;
 }
 .thumb div.thumbnail > div {

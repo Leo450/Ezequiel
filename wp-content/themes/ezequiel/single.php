@@ -13,25 +13,33 @@ get_header(); ?>
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<!-- post thumbnail -->
-					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-						<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-					<?php endif; ?>
-					<!-- /post thumbnail -->
+					<div class="page-title-container">
 
-					<!-- post title -->
-					<h1><?php the_title(); ?></h1>
-					<!-- /post title -->
+						<!-- post title -->
+						<h2 class="page-title"><?php the_title(); ?></h2>
+						<!-- /post title -->
 
-					<!-- post details -->
-					<span class="date"> Publié le <?php the_time('j F Y'); ?></span>
-					<!-- /post details -->
+						<!-- post details -->
+						<span class="date"> Publié le <?php the_time('j F Y'); ?></span>
+						<!-- /post details -->
 
-					<div class="meta"><?php the_tags(); ?></div>
-
-					<div class="content">
-						<?php the_content(); // Dynamic Content ?>
 					</div>
+
+					<div class="article-thumbnail">
+
+						<!-- post thumbnail -->
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+						<?php endif; ?>
+						<!-- /post thumbnail -->
+
+						<div class="meta"><?php the_tags(); ?></div>
+
+					</div>
+
+
+
+					<?php the_content(); // Dynamic Content ?>
 
 					<div class="clear"></div>
 

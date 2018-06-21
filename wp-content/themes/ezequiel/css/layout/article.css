@@ -28,10 +28,16 @@ article a:not(.button) {
 article ul {
   margin-left: 2.5em;
 }
-article .attachment-post-thumbnail {
+article .article-thumbnail {
   float: left;
   max-width: 50%;
-  margin-right: 4em;
+  margin: 0 4em 4em 0;
+}
+article .article-thumbnail .attachment-post-thumbnail {
+  margin-bottom: 1em;
+}
+article .meta {
+  float: left;
 }
 article .meta .wpcr_tooltip {
   float: none;

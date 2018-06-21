@@ -3,12 +3,21 @@
   margin: 0;
   list-style: none;
 }
-.project-menu li {
+.project-menu li.menu-item {
   position: relative;
   height: 58px;
   margin-bottom: 2em;
 }
-.project-menu li a {
+.project-menu li.menu-item.current-menu-item a {
+  background-color: #fff;
+  color: #000;
+}
+.project-menu li.menu-item.current-menu-item a .project-menu-item-thumbnail {
+  -webkit-box-shadow: 5px 0 0 white;
+  -moz-box-shadow: 5px 0 0 white;
+  box-shadow: 5px 0 0 white;
+}
+.project-menu li.menu-item a {
   position: absolute;
   top: 0;
   right: 0;
@@ -20,7 +29,7 @@
   font-weight: 400;
   text-align: center;
 }
-.project-menu li a .project-menu-item-thumbnail {
+.project-menu li.menu-item a .project-menu-item-thumbnail {
   position: absolute;
   top: 50%;
   left: 1em;
@@ -41,10 +50,10 @@
   -moz-box-shadow: 5px 0 0 black;
   box-shadow: 5px 0 0 black;
 }
-.project-menu li a .project-menu-item-thumbnail div {
+.project-menu li.menu-item a .project-menu-item-thumbnail div {
   padding-bottom: 100%;
 }
-.project-menu li a span {
+.project-menu li.menu-item a span {
   position: absolute;
   top: 50%;
   left: 8em;
@@ -55,7 +64,7 @@
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.project-menu li:last-child {
+.project-menu li.menu-item:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 575px) {

@@ -70,3 +70,11 @@
 
 			</header>
 			<!-- /header -->
+
+			<?php if(!is_front_page()){ ?>
+				<div class="breadcrumb">
+					<div class="container">
+						<?php custom_breadcrumbs(); ?>
+					</div>
+				</div>
+			<?php } ?>

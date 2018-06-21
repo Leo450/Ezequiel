@@ -33,7 +33,7 @@ $blog_posts_query = new WP_Query([
 
 			<h1 class="page-title">Le blog du petit théâtre du bout du monde</h1>
 
-			<strong>Découvrez l'avancement du projet étape par étape grâce à notre carnet de bord qui partage avec vous l'évolution du Petit théâtre du bout du monde au jour le jour.<br>Tenez vous également informé de l'actualité du monde du théâtre et de la marionnette.</strong>
+			<strong>Découvrez l'avancement du Petit théâtre du bout du monde grâce à notre carnet de bord et suivez chacunes des étapes du projet.<br>Retrouvez également nos articles d'actualité sur le thème de l'art contemporain, du théâtre, de la marionnette ou encore du jeu vidéo.</strong>
 
 			<div class="filters">
 
@@ -50,7 +50,9 @@ $blog_posts_query = new WP_Query([
 					<div class="row align-items-center">
 
 						<div class="col-4">
-							<img src="<?php echo get_the_post_thumbnail_url($blog_posts_query->post->ID); ?>" alt="thumbnail">
+							<div class="thumbnail">
+								<div style="background-image:url('<?php echo get_the_post_thumbnail_url($blog_posts_query->post->ID); ?>');"></div>
+							</div>
 						</div>
 						<div class="col-8">
 							<h4 class="title"><?php echo $blog_posts_query->post->post_title; ?></h4>
@@ -75,7 +77,9 @@ $blog_posts_query = new WP_Query([
 								<div class="col-10">
 
 									<div class="thumb thumb-full">
-										<img src="<?php echo get_the_post_thumbnail_url($blog_posts_query->post->ID); ?>" alt="thumbnail">
+										<div class="thumbnail">
+											<div style="background-image:url('<?php echo get_the_post_thumbnail_url($blog_posts_query->post->ID); ?>');"></div>
+										</div>
 										<h4 class="title"><?php echo $blog_posts_query->post->post_title; ?></h4>
 										<span class="date">Publié le <?php echo get_the_time("j F Y", $blog_posts_query->post->ID); ?></span>
 										<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur consequatur, culpa deleniti dicta dignissimos dolorum eius exercitationem libero magnam nam non odit officia optio quam reiciendis repellendus. A, unde!</p>

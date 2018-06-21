@@ -32,7 +32,7 @@ $puppets_posts_query = new WP_Query([
 						<div class="col-md-3">
 
 							<div class="thumb">
-								<div class="thumbnail">
+								<div class="thumbnail thumbnail-square">
 									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($puppets_posts_query->post->ID); ?>');"></div>
 								</div>
 								<h4 class="title"><?php echo $puppets_posts_query->post->post_title; ?></h4>

@@ -21,15 +21,15 @@ get_header();
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+					<!-- post title -->
+					<h2 class="page-title"><?php the_title(); ?></h2>
+					<!-- /post title -->
+
 					<!-- post thumbnail -->
 					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 						<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 					<?php endif; ?>
 					<!-- /post thumbnail -->
-
-					<!-- post title -->
-					<h2><?php the_title(); ?></h2>
-					<!-- /post title -->
 
 					<?php the_content(); // Dynamic Content ?>
 
@@ -96,9 +96,11 @@ get_header();
 
 						<div class="col-3">
 							<div class="thumb thumb-full">
-								<img src="<?php echo get_the_post_thumbnail_url($puppets_query->post->ID); ?>" alt="">
+								<div class="thumbnail">
+									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($puppets_query->post->ID); ?>');"></div>
+								</div>
 								<h4 class="title"><?php echo $puppets_query->post->post_title; ?></h4>
-								<a href="<?php echo get_permalink($puppets_query->post->ID); ?>" class="button">En savoir +</a>
+								<a href="<?php echo get_permalink($puppets_query->post->ID); ?>" class="button">Voir</a>
 								<div class="clear"></div>
 							</div>
 						</div>

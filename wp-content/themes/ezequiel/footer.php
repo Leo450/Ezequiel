@@ -19,7 +19,7 @@
 							<div class="col">
 								<div class="contact">
 
-									<a href="/presse-et-contact/" class="button button-yellow button-narrow">Contact presse</a>
+									<a href="/presse-et-contact/" class="button button-yellow button-narrow">Contact & presse</a>
 
 									<div class="follow">
 										Suivez-nous
