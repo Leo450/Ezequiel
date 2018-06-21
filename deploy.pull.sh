@@ -7,6 +7,8 @@ fi
 
 source deploy.env.sh
 
+echo pwd
+
 git pull
 
 if ! [[ -f $sql_filename ]]; then
@@ -14,9 +16,8 @@ if ! [[ -f $sql_filename ]]; then
     exit 1
 fi
 
-echo "1"
-mysql -u root -p -e "DROP DATABASE $dbname;"
-echo "2"
-mysql -u root -p -e "CREATE DATABASE $dbname;"
-echo "3"
-mysql -u root -p $dbname < $sql_filename
+read -p "-> Mysql password" mysql_password
+
+mysql -u root -p$mysql_password -e "DROP DATABASE $dbname;"
+mysql -u root -p$mysql_password -e "CREATE DATABASE $dbname;"
+mysql -u root -p$mysql_password $dbname < $sql_filename
