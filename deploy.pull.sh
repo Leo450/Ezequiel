@@ -14,6 +14,9 @@ if ! [[ -f $sql_filename ]]; then
     exit 1
 fi
 
+echo "1"
 mysql -u root -p -e "DROP DATABASE $dbname;"
+echo "2"
 mysql -u root -p -e "CREATE DATABASE $dbname;"
+echo "3"
 mysql -u root -p $dbname < $sql_filename
