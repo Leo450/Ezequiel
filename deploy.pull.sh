@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -f deploy.env.sh ]]; then
+if ! [[ -f deploy.env.sh ]]; then
     echo "Missing deploy.env.sh file."
     exit 1
 fi
