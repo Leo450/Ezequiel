@@ -25,11 +25,15 @@ get_header();
 					<h2 class="page-title"><?php the_title(); ?></h2>
 					<!-- /post title -->
 
-					<!-- post thumbnail -->
-					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-						<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-					<?php endif; ?>
-					<!-- /post thumbnail -->
+					<div class="article-thumbnail">
+
+						<!-- post thumbnail -->
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+						<?php endif; ?>
+						<!-- /post thumbnail -->
+
+					</div>
 
 					<?php the_content(); // Dynamic Content ?>
 

@@ -41,12 +41,15 @@ get_header();
 
 					</div>
 
+					<div class="article-thumbnail">
 
-					<!-- post thumbnail -->
-					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-						<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-					<?php endif; ?>
-					<!-- /post thumbnail -->
+						<!-- post thumbnail -->
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+						<?php endif; ?>
+						<!-- /post thumbnail -->
+
+					</div>
 
 					<?php the_content(); // Dynamic Content ?>
 
