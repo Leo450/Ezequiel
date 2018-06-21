@@ -7,8 +7,6 @@ fi
 
 source deploy.env.sh
 
-echo pwd
-
 git pull
 
 if ! [[ -f $sql_filename ]]; then
