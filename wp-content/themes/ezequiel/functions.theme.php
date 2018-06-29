@@ -234,6 +234,22 @@ function ez_cpt()
 		]
 	);
 
+	register_post_type('agenda',
+		[
+			'labels' => [
+				'name' => __('Agenda'),
+				'singular_name' => __('Date')
+			],
+			'public' => true,
+			'has_archive' => false,
+			'supports' => [
+				'title',
+				'editor',
+				'custom-fields'
+			],
+		]
+	);
+
 }
 
 /*------------------------------------*\
@@ -401,41 +417,48 @@ function custom_breadcrumbs() {
 			// If post is a custom post type
 			$post_type = get_post_type();
 
-			// If it is a custom post type display name and link
-			if($post_type != 'post') {
+			if($post_type == 'post'){
 
-				if($post_type == 'puppet'){
+				$blog_page = get_page_by_title('Blog');
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $blog_page->ID . '"><a class="bread-parent bread-parent-' . $blog_page->ID . '" href="' . get_permalink($blog_page->ID) . '?filter=post" title="' . $blog_page->post_title . '">' . $blog_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $blog_page->ID . '"> ' . $separator . ' </li>';
 
-					$project_page = get_page_by_title('Le projet');
-					$puppets_page = get_page_by_title('Les marionnettes');
-					$puppets_gallery_page = get_page_by_title('Galerie marionnettes');
+			}elseif($post_type == 'log'){
 
-					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
-					echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
-					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_page->ID . '" href="' . get_permalink($puppets_page->ID) . '" title="' . $puppets_page->post_title . '">' . $puppets_page->post_title . '</a></li>';
-					echo '<li class="separator separator-' . $puppets_page->ID . '"> ' . $separator . ' </li>';
-					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_gallery_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_gallery_page->ID . '" href="' . get_permalink($puppets_gallery_page->ID) . '" title="' . $puppets_gallery_page->post_title . '">' . $puppets_gallery_page->post_title . '</a></li>';
-					echo '<li class="separator separator-' . $puppets_gallery_page->ID . '"> ' . $separator . ' </li>';
+				$blog_page = get_page_by_title('Blog');
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $blog_page->ID . '"><a class="bread-parent bread-parent-' . $blog_page->ID . '" href="' . get_permalink($blog_page->ID) . '?filter=log" title="' . $blog_page->post_title . '">' . $blog_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $blog_page->ID . '"> ' . $separator . ' </li>';
 
-				}elseif($post_type == 'member'){
+			}elseif($post_type == 'puppet'){
 
-					$project_page = get_page_by_title('Le projet');
-					$members_page = get_page_by_title('Rencontre avec l\'équipe artistique');
+				$project_page = get_page_by_title('Le projet');
+				$puppets_page = get_page_by_title('Les marionnettes');
+				$puppets_gallery_page = get_page_by_title('Galerie marionnettes');
 
-					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
-					echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
-					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $members_page->ID . '"><a class="bread-parent bread-parent-' . $members_page->ID . '" href="' . get_permalink($members_page->ID) . '" title="' . $members_page->post_title . '">' . $members_page->post_title . '</a></li>';
-					echo '<li class="separator separator-' . $members_page->ID . '"> ' . $separator . ' </li>';
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_page->ID . '" href="' . get_permalink($puppets_page->ID) . '" title="' . $puppets_page->post_title . '">' . $puppets_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $puppets_page->ID . '"> ' . $separator . ' </li>';
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_gallery_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_gallery_page->ID . '" href="' . get_permalink($puppets_gallery_page->ID) . '" title="' . $puppets_gallery_page->post_title . '">' . $puppets_gallery_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $puppets_gallery_page->ID . '"> ' . $separator . ' </li>';
 
-				}else{
+			}elseif($post_type == 'member'){
 
-					$post_type_object = get_post_type_object($post_type);
-					$post_type_archive = get_post_type_archive_link($post_type);
+				$project_page = get_page_by_title('Le projet');
+				$members_page = get_page_by_title('Rencontre avec l\'équipe artistique');
 
-					echo '<li class="breadcrumb-item breadcrumb-item-cat breadcrumb-item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
-					echo '<li class="separator"> ' . $separator . ' </li>';
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
+				echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $members_page->ID . '"><a class="bread-parent bread-parent-' . $members_page->ID . '" href="' . get_permalink($members_page->ID) . '" title="' . $members_page->post_title . '">' . $members_page->post_title . '</a></li>';
+				echo '<li class="separator separator-' . $members_page->ID . '"> ' . $separator . ' </li>';
 
-				}
+			}else{
+
+				$post_type_object = get_post_type_object($post_type);
+				$post_type_archive = get_post_type_archive_link($post_type);
+
+				echo '<li class="breadcrumb-item breadcrumb-item-cat breadcrumb-item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
+				echo '<li class="separator"> ' . $separator . ' </li>';
 
 			}
 

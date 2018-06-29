@@ -2,11 +2,38 @@
 
 /* Template Name: Project Page Template */
 
+$agenda_query = new WP_Query([
+	'post_type'=> 'agenda',
+	'order'    => 'ASC',
+	'posts_per_page' => -1
+]);
+
+$agenda_has_future_dates = false;
+$current_date = new DateTime();
+while($agenda_query->have_posts()){
+
+	$date_value = get_post_custom_values("date", $agenda_query->post->ID);
+	if(is_array($date_value) && count($date_value) == 1){
+		$date_value = $date_value[0];
+	}
+
+	$date = DateTime::createFromFormat('d/m/Y', $date_value);
+	$date->add(new DateInterval('P1D'));
+
+	if($date >= $current_date){
+		$agenda_has_future_dates = true;
+		break;
+	}
+
+	$agenda_query->setup_postdata($agenda_query->next_post());
+
+}
+$agenda_query->rewind_posts();
+
 $log_query = new WP_Query([
 	'post_type'=> 'log',
 	'order'    => 'ASC',
 	'posts_per_page' => 3
-
 ]);
 
 ?>
@@ -44,7 +71,46 @@ $log_query = new WP_Query([
 
 					<div class="col-md-4 offset-md-1">
 
-						<div class="sidebar">
+						<?php if($agenda_has_future_dates): ?>
+
+							<div class="sidebar agenda-sidebar">
+								<h1>À ne pas manquer</h1>
+								<h3>Les dates importantes</h3>
+
+								<?php if($agenda_query->have_posts()): ?>
+
+									<?php while($agenda_query->have_posts()): $agenda_query->the_post();
+
+										$date_value = get_post_custom_values("date", $agenda_query->post->ID);
+										if(is_array($date_value) && count($date_value) == 1){
+											$date_value = $date_value[0];
+										}
+
+										$date = DateTime::createFromFormat('d/m/Y', $date_value);
+										$date->add(new DateInterval('P1D'));
+
+										if($date < $current_date){
+											continue;
+										}
+
+										?>
+
+										<div class="agenda-date">
+											<?php if(!empty($date_value)): ?>
+												<div class="date"><?php echo $date_value; ?></div>
+											<?php endif; ?>
+											<?php the_content(); ?>
+										</div>
+
+									<?php endwhile; ?>
+
+								<?php endif; ?>
+
+							</div>
+
+						<?php endif; ?>
+
+						<div class="sidebar project-sidebar">
 
 							<h1>En savoir +</h1>
 							<h3>sur le projet</h3>

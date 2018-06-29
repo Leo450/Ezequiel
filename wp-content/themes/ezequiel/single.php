@@ -1,8 +1,14 @@
 <?php
 
+$post_query = new WP_Query([
+	'post_type'=> 'post',
+	'order'    => 'ASC',
+	'posts_per_page' => 3
+]);
+
 get_header(); ?>
 
-	<main role="main">
+<main role="main">
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -101,6 +107,41 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	</main>
+	<section class="section section-single-articles">
+
+		<div class="container">
+
+			<h2>Découvrez d'autres articles associés</h2>
+
+			<div class="row thumbs-row">
+
+				<?php if($post_query->have_posts()): ?>
+
+					<?php while($post_query->have_posts()): $post_query->the_post(); ?>
+
+						<div class="col-md-4<?php if($post_query->current_post > 0){ echo " d-none d-md-block"; } ?>">
+							<div class="thumb thumb-full">
+								<div class="thumbnail">
+									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($post_query->post->ID); ?>');"></div>
+								</div>
+								<h4 class="title"><?php echo $post_query->post->post_title; ?></h4>
+								<span class="date">Publié le <?php echo get_the_time("j F Y", $post_query->post->ID); ?></span>
+								<p class="desc"><?php echo $post_query->post->post_excerpt; ?></p>
+								<a href="<?php echo get_permalink($post_query->post->ID); ?>" class="button">Lire la suite</a>
+								<div class="clear"></div>
+							</div>
+						</div>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+
+			</div>
+
+		</div>
+
+	</section>
+
+</main>
 
 <?php get_footer(); ?>

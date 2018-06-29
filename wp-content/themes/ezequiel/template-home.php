@@ -47,7 +47,7 @@ $log_query = new WP_Query([
 							<?php the_content(); ?>
 
 							<?php if(!empty($link_value)): ?>
-								<a href="<?php echo $link_value ?>" class="button button-yellow button-filled button-bold">Découvrir le projet</a>
+								<a href="<?php echo $link_value; ?>" class="button button-yellow button-filled button-bold">Découvrir le projet</a>
 							<?php endif; ?>
 
 						</div>

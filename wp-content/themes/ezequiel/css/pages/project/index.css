@@ -1,23 +1,31 @@
-.project-menu {
+.project-sidebar {
+  padding: 4em;
+  background-color: #f2c169;
+  color: #000;
+}
+.project-sidebar .project-menu {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.project-menu li.menu-item {
+.project-sidebar .project-menu li.menu-item {
   position: relative;
   height: 58px;
   margin-bottom: 2em;
 }
-.project-menu li.menu-item.current-menu-item a {
+.project-sidebar .project-menu li.menu-item.current-menu-item a {
   background-color: #fff;
   color: #000;
 }
-.project-menu li.menu-item.current-menu-item a .project-menu-item-thumbnail {
+.project-sidebar .project-menu li.menu-item.current-menu-item a .project-menu-item-thumbnail {
   -webkit-box-shadow: 5px 0 0 white;
   -moz-box-shadow: 5px 0 0 white;
   box-shadow: 5px 0 0 white;
 }
-.project-menu li.menu-item a {
+.project-sidebar .project-menu li.menu-item:not(.current-menu-item) a:hover {
+  color: #ccc;
+}
+.project-sidebar .project-menu li.menu-item a {
   position: absolute;
   top: 0;
   right: 0;
@@ -29,7 +37,7 @@
   font-weight: 400;
   text-align: center;
 }
-.project-menu li.menu-item a .project-menu-item-thumbnail {
+.project-sidebar .project-menu li.menu-item a .project-menu-item-thumbnail {
   position: absolute;
   top: 50%;
   left: 1em;
@@ -50,10 +58,10 @@
   -moz-box-shadow: 5px 0 0 black;
   box-shadow: 5px 0 0 black;
 }
-.project-menu li.menu-item a .project-menu-item-thumbnail div {
+.project-sidebar .project-menu li.menu-item a .project-menu-item-thumbnail div {
   padding-bottom: 100%;
 }
-.project-menu li.menu-item a span {
+.project-sidebar .project-menu li.menu-item a span {
   position: absolute;
   top: 50%;
   left: 8em;
@@ -64,8 +72,30 @@
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.project-menu li.menu-item:last-child {
+.project-sidebar .project-menu li.menu-item:last-child {
   margin-bottom: 0;
+}
+.agenda-sidebar {
+  margin-bottom: 4em;
+}
+.agenda-sidebar .agenda-date {
+  position: relative;
+  padding: 4em 2em 1em 2em;
+  margin-bottom: 1em;
+  background-color: #000;
+  color: #fff;
+}
+.agenda-sidebar .agenda-date:last-child {
+  margin-bottom: 0;
+}
+.agenda-sidebar .agenda-date .date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: .25em .5em;
+  font-size: 1.5em;
+  background-color: #f2c169;
+  color: #000;
 }
 @media (max-width: 575px) {
   .sidebar {
