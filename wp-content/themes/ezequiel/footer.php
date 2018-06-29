@@ -31,7 +31,7 @@
 
 							<div class="col col-auto">
 								<div class="links">
-									<a href="/plan-du-site/">Plan du site</a>
+									<!--<a href="/plan-du-site/">Plan du site</a>-->
 									<a href="/mentions-legales/">Mentions légales</a>
 								</div>
 							</div>

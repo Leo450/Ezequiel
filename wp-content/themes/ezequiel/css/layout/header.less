@@ -102,11 +102,23 @@
 				a{
 					margin-left:2em;
 					padding:.7em 2em .5em 2em;
+					border:1px solid transparent;
 					background-color:@yellow;
 					color:@black;
 					-webkit-border-radius:999px;
 					-moz-border-radius:999px;
 					border-radius:999px;
+					-webkit-transition:all .1s ease;
+					-moz-transition:all .1s ease;
+					-ms-transition:all .1s ease;
+					-o-transition:all .1s ease;
+					transition:all .1s ease;
+
+					&:hover{
+						background-color:transparent;
+						border:1px solid @yellow;
+						color:@yellow;
+					}
 				}
 			}
 		}
@@ -115,6 +127,7 @@
 }
 
 @media (max-width: 575px){
+
 	.l-header{
 		padding-bottom:0;
 
@@ -147,6 +160,9 @@
 
 					&:last-child{
 						a{
+							display:inline-block;
+							margin-left:0;
+							margin-top:1em;
 							border:none;
 						}
 					}
@@ -154,4 +170,5 @@
 			}
 		}
 	}
+
 }

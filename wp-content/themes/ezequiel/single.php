@@ -33,7 +33,9 @@ get_header(); ?>
 						<?php endif; ?>
 						<!-- /post thumbnail -->
 
-						<div class="meta"><?php the_tags(); ?></div>
+						<div class="meta">
+							<?php the_tags(); ?>
+						</div>
 
 					</div>
 

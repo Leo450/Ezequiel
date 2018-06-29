@@ -94,9 +94,9 @@ get_header();
 
 					<?php while($member_query->have_posts()): $member_query->the_post(); ?>
 
-						<div class="col-3">
+						<div class="col-md-3">
 							<div class="thumb thumb-full">
-								<div class="thumbnail">
+								<div class="thumbnail thumbnail-square">
 									<div style="background-image:url('<?php echo get_the_post_thumbnail_url($member_query->post->ID); ?>');"></div>
 								</div>
 								<h4 class="title"><?php echo $member_query->post->post_title; ?></h4>
@@ -104,6 +104,8 @@ get_header();
 								<div class="clear"></div>
 							</div>
 						</div>
+
+						<div class="w-100 d-md-none"></div>
 
 					<?php endwhile; ?>
 

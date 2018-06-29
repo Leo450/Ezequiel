@@ -50,3 +50,16 @@
   font-size: .8em;
   text-transform: uppercase;
 }
+@media (max-width: 575px) {
+  .l-footer .l-footer__top .follow {
+    display: block;
+  }
+  .l-footer .l-footer__top .follow .socials {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5em;
+  }
+  .l-footer .l-footer__top .follow .socials a:first-child {
+    margin-left: 0;
+  }
+}

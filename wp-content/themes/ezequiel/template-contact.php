@@ -22,9 +22,11 @@
 					<div class="col-md-5"></div>
 					<div class="col-md-7">
 
-						<h1>Téléchargez le dossier de presse du projet</h1>
+						<h1>Téléchargez le dossier de présentation du projet</h1>
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis consequuntur dolorum eius enim in ratione sed sint ullam. Amet at deleniti id illum nulla officiis praesentium quis quod rerum.</p>
+
+						<a href="<?php echo wp_get_attachment_url(174) ?>" target="_blank" class="button button-filled button-yellow">Télécharger</a>
 
 					</div>
 

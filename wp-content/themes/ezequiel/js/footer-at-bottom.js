@@ -4,7 +4,11 @@
 
 		'use strict';
 
-		$('body').css('padding-bottom', $('.l-footer').get(0).getBoundingClientRect().height);
+		$(document).ready(function(){
+
+			$('body').css('padding-bottom', $('.l-footer').get(0).getBoundingClientRect().height);
+
+		});
 
 	});
 

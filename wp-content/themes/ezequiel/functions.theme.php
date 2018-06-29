@@ -173,7 +173,7 @@ function ez_cpt()
 				'singular_name' => __('Home Slide')
 			],
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'supports' => [
 				'title',
 				'editor',
@@ -190,11 +190,12 @@ function ez_cpt()
 				'singular_name' => __('Article carnet de bord')
 			],
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'supports' => [
 				'title',
 				'editor',
-				'thumbnail'
+				'thumbnail',
+				'comments'
 			],
 		]
 	);
@@ -206,7 +207,7 @@ function ez_cpt()
 				'singular_name' => __('Marionnette')
 			],
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'supports' => [
 				'title',
 				'editor',
@@ -223,7 +224,7 @@ function ez_cpt()
 				'singular_name' => __('Membre de l\'équipe')
 			],
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'supports' => [
 				'title',
 				'editor',
@@ -403,16 +404,43 @@ function custom_breadcrumbs() {
 			// If it is a custom post type display name and link
 			if($post_type != 'post') {
 
-				$post_type_object = get_post_type_object($post_type);
-				$post_type_archive = get_post_type_archive_link($post_type);
+				if($post_type == 'puppet'){
 
-				echo '<li class="breadcrumb-item breadcrumb-item-cat breadcrumb-item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
-				echo '<li class="separator"> ' . $separator . ' </li>';
+					$project_page = get_page_by_title('Le projet');
+					$puppets_page = get_page_by_title('Les marionnettes');
+					$puppets_gallery_page = get_page_by_title('Galerie marionnettes');
+
+					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
+					echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
+					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_page->ID . '" href="' . get_permalink($puppets_page->ID) . '" title="' . $puppets_page->post_title . '">' . $puppets_page->post_title . '</a></li>';
+					echo '<li class="separator separator-' . $puppets_page->ID . '"> ' . $separator . ' </li>';
+					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $puppets_gallery_page->ID . '"><a class="bread-parent bread-parent-' . $puppets_gallery_page->ID . '" href="' . get_permalink($puppets_gallery_page->ID) . '" title="' . $puppets_gallery_page->post_title . '">' . $puppets_gallery_page->post_title . '</a></li>';
+					echo '<li class="separator separator-' . $puppets_gallery_page->ID . '"> ' . $separator . ' </li>';
+
+				}elseif($post_type == 'member'){
+
+					$project_page = get_page_by_title('Le projet');
+					$members_page = get_page_by_title('Rencontre avec l\'équipe artistique');
+
+					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $project_page->ID . '"><a class="bread-parent bread-parent-' . $project_page->ID . '" href="' . get_permalink($project_page->ID) . '" title="' . $project_page->post_title . '">' . $project_page->post_title . '</a></li>';
+					echo '<li class="separator separator-' . $project_page->ID . '"> ' . $separator . ' </li>';
+					echo '<li class="breadcrumb-item breadcrumb-item-parent breadcrumb-item-parent-' . $members_page->ID . '"><a class="bread-parent bread-parent-' . $members_page->ID . '" href="' . get_permalink($members_page->ID) . '" title="' . $members_page->post_title . '">' . $members_page->post_title . '</a></li>';
+					echo '<li class="separator separator-' . $members_page->ID . '"> ' . $separator . ' </li>';
+
+				}else{
+
+					$post_type_object = get_post_type_object($post_type);
+					$post_type_archive = get_post_type_archive_link($post_type);
+
+					echo '<li class="breadcrumb-item breadcrumb-item-cat breadcrumb-item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
+					echo '<li class="separator"> ' . $separator . ' </li>';
+
+				}
 
 			}
 
 			// Get post category info
-			$category = get_the_category();
+			/*$category = get_the_category();
 
 			if(!empty($category)) {
 
@@ -430,7 +458,7 @@ function custom_breadcrumbs() {
 					$cat_display .= '<li class="separator"> ' . $separator . ' </li>';
 				}
 
-			}
+			}*/
 
 			// If it's a custom post type within a custom taxonomy
 			$taxonomy_exists = taxonomy_exists($custom_taxonomy);

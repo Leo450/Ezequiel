@@ -71,4 +71,8 @@
   .sidebar {
     margin: 0 -15px;
   }
+  .section-project-logs {
+    padding-bottom: 4em;
+    margin-top: 4em;
+  }
 }

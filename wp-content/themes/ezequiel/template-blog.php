@@ -70,11 +70,11 @@ $blog_posts_query = new WP_Query([
 
 					<?php while($blog_posts_query->have_posts()): $blog_posts_query->the_post(); ?>
 
-						<div class="col-4">
+						<div class="col-md-4">
 
 							<div class="row<?php if(($blog_posts_query->current_post) % 3 == 2){ echo ' justify-content-center'; }elseif(($blog_posts_query->current_post) % 3 == 0){ echo ' justify-content-end'; } ?>">
 
-								<div class="col-10">
+								<div class="col-md-10">
 
 									<div class="thumb thumb-full">
 										<div class="thumbnail">
@@ -93,8 +93,10 @@ $blog_posts_query = new WP_Query([
 
 						</div>
 
+						<div class="w-100 d-md-none"></div>
+
 						<?php if(($blog_posts_query->current_post) % 3 == 0): ?>
-							<div class="w-100"></div>
+							<div class="w-100 d-none d-md-block"></div>
 						<?php endif; ?>
 
 					<?php endwhile; ?>
@@ -102,6 +104,8 @@ $blog_posts_query = new WP_Query([
 				</div>
 
 				<?php ez_pagination($blog_posts_query, $paged); ?>
+
+				<div class="w-100 d-md-none"></div>
 
 			<?php endif; ?>
 

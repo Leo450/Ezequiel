@@ -15,10 +15,64 @@
 			right:0;
 			bottom:0;
 			left:0;
+			padding:0 5em;
 			background-size:cover;
 			background-position:center;
 			background-repeat:no-repeat;
 			color:@white;
+		}
+
+	}
+
+	.slick-arrow{
+		position:absolute;
+		top:50%;
+		width:30px;
+		height:62px;
+		z-index:999;
+		color:transparent;
+		border:none;
+		background-color:transparent;
+		background-image:url('../img/arrow.png');
+		background-repeat:no-repeat;
+		-webkit-transform:translateY(-50%);
+		-moz-transform:translateY(-50%);
+		-ms-transform:translateY(-50%);
+		-o-transform:translateY(-50%);
+		transform:translateY(-50%);
+		outline:none;
+
+		&.slick-prev{
+			left:4em;
+			-webkit-transform:translateY(-50%) rotate(180deg);
+			-moz-transform:translateY(-50%) rotate(180deg);
+			-ms-transform:translateY(-50%) rotate(180deg);
+			-o-transform:translateY(-50%) rotate(180deg);
+			transform:translateY(-50%) rotate(180deg);
+		}
+
+		&.slick-next{
+			right:4em;
+		}
+	}
+
+}
+
+@media (max-width: 575px){
+
+	.slider{
+
+		.slide{
+			padding-bottom:61%;
+		}
+
+		.slick-arrow{
+			&.slick-prev{
+				left:1em;
+			}
+			&.slick-next{
+				right:1em;
+			}
 		}
 
 	}
