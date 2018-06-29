@@ -620,7 +620,7 @@ article .content {
 }
 @media (max-width: 575px) {
   .slider .slide {
-    padding-bottom: 61%;
+    padding-bottom: 100%;
   }
   .slider .slick-arrow.slick-prev {
     left: 1em;
