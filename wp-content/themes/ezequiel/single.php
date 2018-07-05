@@ -80,9 +80,7 @@ get_header(); ?>
 					<?php wp_list_comments([
 						'per_page' => 10,
 						'reverse_top_level' => false
-					], get_comments([
-						'post_id' => get_the_ID()
-					])); ?>
+					], get_approved_comments(get_the_ID())); ?>
 				</ul>
 
 			</div>

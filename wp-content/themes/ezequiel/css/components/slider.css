@@ -1,7 +1,7 @@
 .slider .slide {
   position: relative;
   height: 0;
-  padding-bottom: 16.2%;
+  padding-bottom: 36%;
 }
 .slider .slide > div {
   display: flex;

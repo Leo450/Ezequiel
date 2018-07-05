@@ -1,6 +1,11 @@
 form {
   padding-bottom: 2em;
 }
+form:after {
+  content: "";
+  clear: both;
+  display: table;
+}
 form input:not([type="submit"]),
 form textarea {
   padding: 1em;
@@ -9,9 +14,13 @@ form textarea {
   resize: none;
 }
 form input[type="submit"] {
+  float: right;
   padding: 1em;
   border: none;
   background-color: #000;
   color: #fff !important;
   text-transform: uppercase;
+}
+form .wpcf7-recaptcha {
+  float: left;
 }

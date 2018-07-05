@@ -89,7 +89,7 @@ $log_query = new WP_Query([
 
 					<div class="col-md-4 offset-md-1">
 
-						<div class="sidebar">
+						<div class="sidebar sidebar-yellow home-sidebar">
 
 							<h1>Carnet de bord</h1>
 							<h3>Petit théâtre au bout du monde</h3>

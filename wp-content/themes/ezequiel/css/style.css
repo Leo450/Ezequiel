@@ -348,6 +348,11 @@ body {
 		padding-bottom:0;
 	}
 }*/
+.sidebar.sidebar-yellow {
+  padding: 4em;
+  background-color: #f2c169;
+  color: #000;
+}
 .sidebar h1,
 .sidebar h3 {
   text-align: center;
@@ -453,6 +458,10 @@ article .content {
     max-width: 100%;
     margin: 0;
   }
+  article .meta {
+    float: none;
+    margin-bottom: 2em;
+  }
 }
 .breadcrumb {
   padding: 2em 0 1em 0;
@@ -463,6 +472,7 @@ article .content {
   padding: 0;
   margin: 0;
   list-style: none;
+  flex-wrap: wrap;
 }
 .breadcrumb ul.breadcrumbs li {
   margin-right: 1em;
@@ -568,7 +578,7 @@ article .content {
 .slider .slide {
   position: relative;
   height: 0;
-  padding-bottom: 16.2%;
+  padding-bottom: 36%;
 }
 .slider .slide > div {
   display: flex;
@@ -688,6 +698,11 @@ article .content {
 form {
   padding-bottom: 2em;
 }
+form:after {
+  content: "";
+  clear: both;
+  display: table;
+}
 form input:not([type="submit"]),
 form textarea {
   padding: 1em;
@@ -696,11 +711,15 @@ form textarea {
   resize: none;
 }
 form input[type="submit"] {
+  float: right;
   padding: 1em;
   border: none;
   background-color: #000;
   color: #fff !important;
   text-transform: uppercase;
+}
+form .wpcf7-recaptcha {
+  float: left;
 }
 .comments {
   margin: 0;

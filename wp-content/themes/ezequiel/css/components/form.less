@@ -3,6 +3,12 @@
 form{
 	padding-bottom:2em;
 
+	&:after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+
 	input:not([type="submit"]), textarea{
 		padding:1em;
 		border:none;
@@ -10,10 +16,14 @@ form{
 		resize:none;
 	}
 	input[type="submit"]{
+		float:right;
 		padding:1em;
 		border:none;
 		background-color:@black;
 		color:@white!important;
 		text-transform:uppercase;
+	}
+	.wpcf7-recaptcha{
+		float:left;
 	}
 }

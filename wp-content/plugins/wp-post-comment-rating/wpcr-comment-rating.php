@@ -107,6 +107,11 @@ add_action( 'comment_form_top', 'wpcr_change_comment_form_defaults');
 function wpcr_change_comment_form_defaults( ) {
 	global $check;
 	global $wpdb;
+    global $post;
+
+  if($post->post_type != "post"){
+    return;
+  }
     
 	//// get rating value from database
 	$ratingValues = $wpdb->get_results( "SELECT meta_value FROM ".$wpdb->prefix."commentmeta WHERE meta_key = 'rating'");
@@ -141,6 +146,13 @@ function wpcr_change_comment_form_defaults( ) {
 add_action( 'comment_post', 'wpcr_save_comment_meta_data' );
 
 function wpcr_save_comment_meta_data( $comment_id ) {
+
+  global $post;
+
+  if($post->post_type != "post"){
+    return;
+  }
+
 	$rating =  (empty($_POST['rating'])) ? FALSE : $_POST['rating'];
     add_comment_meta( $comment_id, 'rating', $rating );
 }
@@ -154,6 +166,12 @@ if ( $options['checkbox1'] == 'yes' ) {
 	
 }
 function wpcr_verify_comment_meta_data( $commentdata ) {
+
+  global $post;
+
+  if($post->post_type != "post"){
+    return $commentdata;
+  }
 	
 	if ( ! isset( $_POST['rating'] ) )
 		if($_POST['comment_parent'] == 0)
@@ -167,6 +185,10 @@ function wpcr_verify_comment_meta_data( $commentdata ) {
 function wpcr_tag_aggr() {
 	
 	global $passedtext , $post;
+
+  if($post->post_type != "post"){
+    return;
+  }
 	
 	$args = array('post_id' => $post->ID);
 	
@@ -222,6 +244,12 @@ function wpcr_comment_tut_add_title_to_text($text,$comment){
     
 	global $passedtext;
 	global $wpdb;
+	global $post;
+
+  if($post->post_type != "post"){
+    return $text;
+  }
+
 	$results = $wpdb->get_results( "SELECT option_value FROM ".$wpdb->prefix."options WHERE option_name = 'wpcr_settings'");
 	$a = unserialize($results[0]->option_value);
 	$check1 = $a['checkbox1'];

@@ -124,7 +124,7 @@ function ez_modify_comment_form_comment_field_template($field)
 	preg_match('/(\<textarea.*?\>)\<\/textarea\>/', $field, $input_matches);
 
 	if(isset($label_matches[1]) && isset($input_matches[1])){
-		$field = str_replace($label_matches[0], "", str_replace($input_matches[1], $input_matches[1] . $label_matches[1], $field));
+		$field = str_replace($label_matches[0], "", str_replace($input_matches[1], str_replace(">", 'placeholder="' . $label_matches[1] . '">', $input_matches[1]), $field));
 	}
 
 	return '<div class="row"><div class="col-12">' . $field . '</div></div>';
@@ -174,11 +174,13 @@ function ez_cpt()
 			],
 			'public' => true,
 			'has_archive' => false,
+			'hierarchical' => false,
 			'supports' => [
 				'title',
 				'editor',
 				'thumbnail',
-				'custom-fields'
+				'custom-fields',
+				'page-attributes'
 			],
 		]
 	);

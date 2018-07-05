@@ -1,3 +1,8 @@
+.sidebar.sidebar-yellow {
+  padding: 4em;
+  background-color: #f2c169;
+  color: #000;
+}
 .sidebar h1,
 .sidebar h3 {
   text-align: center;

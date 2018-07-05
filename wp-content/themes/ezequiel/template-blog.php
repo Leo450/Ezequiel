@@ -49,12 +49,12 @@ $blog_posts_query = new WP_Query([
 				<div class="thumb thumb-full thumb-alone">
 					<div class="row align-items-center">
 
-						<div class="col-4">
+						<div class="col-md-4">
 							<div class="thumbnail">
 								<div style="background-image:url('<?php echo get_the_post_thumbnail_url($blog_posts_query->post->ID); ?>');"></div>
 							</div>
 						</div>
-						<div class="col-8">
+						<div class="col-md-8">
 							<h4 class="title"><?php echo $blog_posts_query->post->post_title; ?></h4>
 							<span class="date">Publié le <?php echo get_the_time("j F Y", $blog_posts_query->post->ID); ?></span>
 							<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur consequatur, culpa deleniti dicta dignissimos dolorum eius exercitationem libero magnam nam non odit officia optio quam reiciendis repellendus. A, unde!</p>

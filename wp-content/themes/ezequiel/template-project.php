@@ -110,7 +110,7 @@ $log_query = new WP_Query([
 
 						<?php endif; ?>
 
-						<div class="sidebar project-sidebar">
+						<div class="sidebar sidebar-yellow project-sidebar">
 
 							<h1>En savoir +</h1>
 							<h3>sur le projet</h3>

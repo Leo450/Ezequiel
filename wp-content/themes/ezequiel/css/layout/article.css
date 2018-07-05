@@ -59,4 +59,8 @@ article .content {
     max-width: 100%;
     margin: 0;
   }
+  article .meta {
+    float: none;
+    margin-bottom: 2em;
+  }
 }
