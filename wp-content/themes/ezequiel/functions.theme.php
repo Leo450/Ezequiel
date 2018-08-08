@@ -193,6 +193,7 @@ function ez_cpt()
 			],
 			'public' => true,
 			'has_archive' => false,
+			'rewrite' => ['slug' => 'carnet-de-bord'],
 			'supports' => [
 				'title',
 				'editor',
@@ -210,6 +211,7 @@ function ez_cpt()
 			],
 			'public' => true,
 			'has_archive' => false,
+			'rewrite' => ['slug' => 'marionnette'],
 			'supports' => [
 				'title',
 				'editor',
@@ -227,6 +229,7 @@ function ez_cpt()
 			],
 			'public' => true,
 			'has_archive' => false,
+			'rewrite' => ['slug' => 'membre'],
 			'supports' => [
 				'title',
 				'editor',

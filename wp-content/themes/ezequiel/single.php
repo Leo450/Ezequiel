@@ -69,19 +69,21 @@ get_header(); ?>
 					<h3 class="sub-title">Evaluez l'article en nous laissant une note</h3>
 				</div>
 
-				<?php comment_form([
-					'comment_notes_before' => null,
-					'title_reply' => null,
-					'title_reply_before' => null,
-					'title_reply_after' => null,
-				]); ?>
-
 				<ul class="comments">
 					<?php wp_list_comments([
 						'per_page' => 10,
 						'reverse_top_level' => false
 					], get_approved_comments(get_the_ID())); ?>
 				</ul>
+
+                <br>
+
+				<?php comment_form([
+					'comment_notes_before' => null,
+					'title_reply' => null,
+					'title_reply_before' => null,
+					'title_reply_after' => null,
+				]); ?>
 
 			</div>
 

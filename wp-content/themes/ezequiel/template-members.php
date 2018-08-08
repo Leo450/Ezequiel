@@ -110,14 +110,14 @@ $log_query = new WP_Query([
 
 						<div class="col-md-4 offset-md-1">
 
-							<div class="sidebar">
+                            <div class="sidebar sidebar-yellow project-sidebar">
 
-								<h1>En savoir +</h1>
-								<h3>sur le projet</h3>
+                                <h1>En savoir +</h1>
+                                <h3>sur le projet</h3>
 
 								<?php ez_project_nav(); ?>
 
-							</div>
+                            </div>
 
 						</div>
 

@@ -19,7 +19,15 @@
 
 				<div class="row">
 
-					<div class="col-md-5"></div>
+					<div class="col-md-5">
+
+                        <!-- post thumbnail -->
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+						<?php endif; ?>
+                        <!-- /post thumbnail -->
+
+                    </div>
 					<div class="col-md-7">
 
 						<h1>Téléchargez le dossier de présentation du projet</h1>
