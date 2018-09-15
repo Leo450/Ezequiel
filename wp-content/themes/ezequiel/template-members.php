@@ -58,7 +58,7 @@ $log_query = new WP_Query([
 										<?php if(!empty($job_value)): ?>
 											<span class="legend"><?php echo $job_value ?></span>
 										<?php endif; ?>
-										<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur consequatur, culpa deleniti dicta dignissimos dolorum eius exercitationem libero magnam nam non odit officia optio quam reiciendis repellendus. A, unde!</p>
+                                        <p class="desc"><?php echo $members_posts_query->post->post_excerpt; ?></p>
 										<a href="<?php echo get_permalink($members_posts_query->post->ID); ?>" class="button">En savoir +</a>
 									</div>
 
