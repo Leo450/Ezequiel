@@ -82,7 +82,7 @@ $blog_posts_query = new WP_Query([
 										</div>
 										<h4 class="title"><?php echo $blog_posts_query->post->post_title; ?></h4>
 										<span class="date">Publié le <?php echo get_the_time("j F Y", $blog_posts_query->post->ID); ?></span>
-										<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur consequatur, culpa deleniti dicta dignissimos dolorum eius exercitationem libero magnam nam non odit officia optio quam reiciendis repellendus. A, unde!</p>
+										<p class="desc"><?php echo $blog_posts_query->post->post_excerpt; ?></p>
 										<a href="<?php echo get_permalink($blog_posts_query->post->ID); ?>" class="button">Lire la suite</a>
 										<div class="clear"></div>
 									</div>
